@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="/profile/{{username}}">Profile</a>
+	<a href="/profile/edit/{{username}}">Edit Profile</a>
+	<a href="/logout">Logout</a>
+
+	<form method='POST'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit", name="save">Sort</button>
+		<p>{{tes}}</p>
+	</form>
+	{% for i in data %}
+		{% if i.jurusan != "-" and i.status == 'alumni' %}
+			<img src="{{i.image.url}}">
+			<p>{{i.nama}}</p>
+			<p>{{i.jurusan}}</p>
+		{% endif %}
+	{% endfor%}
+	
+</body>
+</html>
