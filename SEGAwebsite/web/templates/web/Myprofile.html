@@ -1,22 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'web/profil.css' %}">
 </head>
 <body>
-	<img src="{{user.image.url}}">
-	<h1>{{user.nama}}</h1> <h1>{{user.status}}</h1><h1>{{user.nis}}</h1>
-	<h1>{{user.kontak}}</h1>
-	<h1>{{user.jurusan}}</h1>
-	<h1>{{user.fakultas}}</h1>
-	<h1>{{user.univ}}</h1>
-	<h1>{{user.jalur}}</h1>
-	<h1>{{user.skor_1}}</h1>
-	<h1>{{user.skor_2}}</h1>
-	<h1>{{user.tahunlulus}}</h1>
-	<h1>{{user.tahunmasuk}}</h1>
-	<h1>{{user.refrensi}}</h1>
-	<h1>{{user.pesan}}</h1>
-	<a href="/profile/edit/{{user.username}}">Edit Profile</a>
+	{% include "Navbar.html" %}
+	<br><br><br><br><br><br>
+	<div class="profilBlok">
+	
+		<div class="blokSingkat">
+			<img src="{{user.image.url}}" class="centerProfil">
+			<br><br>
+			<h3 style="color:#fed337;">Jurusan</h3>
+			<p>{{user.jurusan}}</p>
+			<h3 style="color:#fed337;">Fakultas</h3>
+			<p>{{user.fakultas}}</p>
+			<h3 style="color:#fed337;">Perguruan Tinggi</h3>
+			<p>{{user.univ}}</p>
+			<h3 style="color:#fed337;">Tahun Masuk</h3>
+			<p>{{user.tahunmasuk}}</p>
+			<h3 style="color:#fed337;">Jalur Masuk</h3>
+			<p>{{user.jalur}}</p>
+			<h3 style="color:#fed337;">Nilai UTBK 1</h3>
+			<p>{{user.skor_1}}</p>
+			<h3 style="color:#fed337;">Nilai UTBK 2</h3>
+			<p>{{user.skor_2}}</p>
+			<br><br>
+			<a href="/profile/edit/{{user.username}}" ><button>Edit Profile</button></a>
+		</div>
+
+		<div class="blokPadat">
+			<h1 class="namaProfil">{{user.nama}}</h1>
+			<br>
+			<hr color=0f1c26 size="7">
+			<h3><i>Lulusan {{user.tahunlulus}}</i></h3>
+			<br>
+			<br>
+			<h2>Kontak : </h2>
+			<p>{{user.kontak}}</p>
+			<br>
+			<h2>Referensi Belajar : </h2>
+			<p>{{user.refrensi}}</p>
+			<br>
+			<h2>Pesan dan Tips Belajar : </h2>
+			<p>{{user.pesan}}</p>
+			
+		</div>
+	
+	</div>
+
 </body>
 </html>

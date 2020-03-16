@@ -54,7 +54,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #2d426d;
+  background-color: #0f1c26;
   min-width: 160px;
   color: white;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -71,7 +71,7 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #b7c5e1;
+  background-color: #2e4759;
 }
 
 .dropdown:hover .dropdown-content {
@@ -102,6 +102,7 @@ body {
   float: left;
   width: 30%;
   padding: 0px 30px;
+
 }
 
 .columnsNavBeranda {
@@ -182,7 +183,6 @@ body {
   }
   .dropdown-content {
     width: 5px;
-    background-color: #2d426d;
   }
   .dropdown-content a {
     float: left;
@@ -193,7 +193,6 @@ body {
   .columnsNav {
     float: left;
     width: 30%;
-    padding: 0px;
   }
 
   .columnsNavBeranda {
@@ -207,17 +206,18 @@ body {
 @media screen and (max-width: 900px) {
   body {
     padding: 10px 0px 10px 0px;
+
   }
   .navbar a {
     float: left;
     padding: 5px 0px 0px 5px;
     font-size: 9px;
-  }
+   }
 
   .colGaris {
     float: left;
     width: 60%;
-    padding:5px 30px 20px 30px;
+    padding:5px 30px 20px 10px;
     height: 5px;
   }
 
@@ -225,16 +225,17 @@ body {
     padding: 0px 100px 0px 10px;
 
   }
+
+
   .dropdown .dropbtn {
     font-size: 5px;
   }
   .dropdown-content {
     width: 5px;
-    background-color: #2d426d;
   }
   .dropdown-content a {
     float: left;
-    padding: 5px 12px;
+    padding: 1px 12px;
     text-align: left;
     color: white;
   }
@@ -245,13 +246,13 @@ body {
   }
   .columnsNavBeranda {
     float: left;
-    width: 15%;
+    width: 20%;
     padding: 0px 0px 0px 30px;
   }
   .columnsNavLogo {
     float: left;
     width: 100%;
-    padding: 20px 0px 0px 20px;
+    padding: 20px 0px 0px 10px;
   }
 
   .logo {

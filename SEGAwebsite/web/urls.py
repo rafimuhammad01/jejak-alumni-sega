@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.beranda, name="web-Beranda"),
+    path('beranda/', views.beranda, name="web-Beranda"),
     path('profile/<username>/', views.profile, name="web-Profile"),
     path('profile/edit/<username>/', views.editProfile, name="web-EditProfile"),
     path('statistik/', views.statistik, name="web-Statistik"),
