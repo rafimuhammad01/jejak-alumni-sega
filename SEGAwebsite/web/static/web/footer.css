@@ -1,0 +1,80 @@
+
+.kolomFooter {
+	width: 100%;
+	background-color: transparent;
+	height: 100px;
+	padding : 220px 0px 0px 0px;
+}
+
+.fotoFooter {
+	width: 30%;
+	height: 100%;
+	background-color: #9f1717;
+	float: left;
+	padding : 20px 0px 0px 0px;
+}
+
+.gambar {
+	width: 200px;
+	height: 70px;
+	border-radius: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.tulisanFooter {
+	width: 35%;
+	background-color: #9f1717;
+	height: 100%;
+	float: left;
+	text-align: center;
+	color: white;
+	padding: 10px 0px
+}
+
+.tulisanFooter p {
+	font-size: 16px;
+}
+
+.mobile {
+	display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+	.kolomFooter {
+		height: 50px;
+	}
+
+	.mobile {
+		display: inline;
+	}
+
+	.fotoFooter {
+		padding : 10px 0px;
+	}
+
+	.gambar {
+		width: 80px;
+		height: 35px;
+		border-radius: 0px;
+	}
+
+	.tulisanFooter {
+		padding: 0px 0px 20px 0px;
+	}
+
+	.tulisanFooter p {
+		font-size: 10px;
+	}
+
+	.tulisanFooter h3 {
+		font-size: 11px;
+	}
+
+	.tulisanFooter h2 {
+		font-size: 11px;
+	}
+
+}
