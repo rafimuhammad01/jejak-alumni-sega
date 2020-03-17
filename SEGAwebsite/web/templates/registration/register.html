@@ -1,18 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 <body>
+	{% block content %}
 	<form method="POST">
 		{% csrf_token %}
-		{{form.as_p}}
-		<button type="submit" >Register</button>
-		{%if res == 1 %}
-			<h1>Selamat Register Berhasil, Silahkan Login</h1>
-		{%elif res == -1%}
-			<h1>Register Gagal</h1>
-		{%endif%}
+		{{form|crispy}}
+		<button type="submit", class="btn btn-primary" >Register</button>
 	</form>
+	{% endblock content %}
 </body>
 </html>

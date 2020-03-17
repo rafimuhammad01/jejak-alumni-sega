@@ -14,7 +14,7 @@ class User(models.Model) :
 	skor_1 = models.CharField("Skor 1",max_length=50, default="-")
 	skor_2 = models.CharField("Skor 2",max_length=50, default="-")
 	tahunlulus = models.CharField("Tauhun Lulus", max_length=50, default="-")
-	tahunmasuk = models.CharField("Tahum Masuk",max_length=50, default="-")
+	tahunmasuk = models.CharField("Tahun Masuk",max_length=50, default="-")
 	refrensi = models.CharField("Refrensi",max_length=50, default="-")
 	pesan = models.TextField("Pesan",max_length=200, default="-")
 	image = models.ImageField("Foto",default='default.jpg', upload_to='profile_pics')
