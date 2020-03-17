@@ -9,6 +9,9 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegistrationForm, sortBy
 from django.db.models.functions import Lower
 
+from django.views.generic import TemplateView
+import random
+
 
 
 def beranda(response):
@@ -90,7 +93,8 @@ def editProfile(request,username):
 	else :
 		return redirect('login')
 
-def statistik(request) :
+def statistik(request) : 
+
 	return render(request, 'web/statistik.html')
 
 
@@ -113,3 +117,70 @@ def register (response):
 			form = UserRegistrationForm()
 	
 	return render(response, "registration/register.html", {'form':form})
+
+
+class StatistikUnivChartView (TemplateView) :
+	template_name = 'web/statistikUniv.html'
+
+	def get_context_data(self, **kwargs) :
+		context = super().get_context_data(**kwargs)
+		total = {}
+
+		subject = []
+		user = User.objects.exclude(univ='-')
+		for item in user :
+			if item.univ not in total :
+				total[item.univ] = 1
+			else :
+				total[item.univ] += 1
+
+		warnaBackground = []
+		warnaBorder = []
+		for item in range(len(total)) :
+			r = random.randint(0,255)
+			g = random.randint(0,255)
+			b = random.randint(0,255)
+			a1 = 0.5
+			a2 = 1
+			
+			warnaBackground.append('rgba('+ str(r) + ", " + str(g) + ", " + str(b) + ", " + str(a1) + ')')
+			warnaBorder.append('rgba('+ str(r) + ", " + str(g) + ", " + str(b) + ", " + str(a2) + ')')
+
+		context['label'] = total
+		context['total'] = total.values()
+		context['warnaBackground'] = warnaBackground
+		context['warnaBorder'] = warnaBorder
+		return context
+
+class StatistikJalurChartView (TemplateView) :
+	template_name = 'web/statistikJalur.html'
+
+	def get_context_data(self, **kwargs) :
+		context = super().get_context_data(**kwargs)
+		total = {}
+
+		subject = []
+		user = User.objects.exclude(jalur='-')
+		for item in user :
+			if item.jalur not in total :
+				total[item.jalur] = 1
+			else :
+				total[item.jalur] += 1
+
+		warnaBackground = []
+		warnaBorder = []
+		for item in range(len(total)) :
+			r = random.randint(0,255)
+			g = random.randint(0,255)
+			b = random.randint(0,255)
+			a1 = 0.5
+			a2 = 1
+			
+			warnaBackground.append('rgba('+ str(r) + ", " + str(g) + ", " + str(b) + ", " + str(a1) + ')')
+			warnaBorder.append('rgba('+ str(r) + ", " + str(g) + ", " + str(b) + ", " + str(a2) + ')')
+
+		context['label'] = total
+		context['total'] = total.values()
+		context['warnaBackground'] = warnaBackground
+		context['warnaBorder'] = warnaBorder
+		return context

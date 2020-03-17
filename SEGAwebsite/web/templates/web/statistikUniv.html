@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Statistik Jurusan{% endblock title %}
+
+{% block scripts %}
+<script>
+$(document).ready(function(){
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: [{% for item in label %} '{{ item }}',  {% endfor %}],
+	        datasets: [{
+	            label: 'Statistik by Perguruan Tinggi',
+	            data: [{% for item in total %} {{item}}, {% endfor %}],
+	            backgroundColor: [{% for item in warnaBackground %} '{{ item }}',  {% endfor %}],
+	            borderColor: [{% for item in warnaBorder %} '{{ item }}',  {% endfor %}],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});
+});
+</script>
+{% endblock scripts %}
+
+{% block content %}
+	<canvas id="myChart" width="400" height="100"></canvas>
+	<h1>Statistik Universitas</h1>
+{% endblock content %}

@@ -3,12 +3,14 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from web.views import StatistikUnivChartView, StatistikJalurChartView
 
 urlpatterns = [
     path('beranda/', views.beranda, name="web-Beranda"),
     path('profile/<username>/', views.profile, name="web-Profile"),
     path('profile/edit/<username>/', views.editProfile, name="web-EditProfile"),
-    path('statistik/', views.statistik, name="web-Statistik"),
+    path('statistik/Universitas', StatistikUnivChartView.as_view(), name="web-StatistikByUniv"),
+    path('statistik/JalurMasuk', StatistikJalurChartView.as_view(), name="web-StatistikByJalur"),
     path('register/', views.register, name="web-Register"),
     path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
 ]
