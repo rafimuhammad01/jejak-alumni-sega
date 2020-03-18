@@ -48,17 +48,9 @@ def beranda(response):
 			else :
 				form = sortBy()
 				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-<<<<<<< HEAD
-
 		else :
 			messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
-
-=======
-		else :
-			messages.info(response, 'Silahkan Lengkapi Profile Anda')
-			return redirect('web-EditProfile', username=user.username)
->>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 	else :
 		return redirect('login')
 
@@ -66,11 +58,6 @@ def profile(response, username) :
 	if response.user.is_authenticated :
 		usernameindatabase = User.objects.filter(username=username).first()
 		userlogin = User.objects.get(username=response.user.get_username())
-<<<<<<< HEAD
-		#if usernameindatabase != None and usernameindatabase.jurusan != "-" and usernameindatabase.status == 'alumni':
-=======
-
->>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 		if usernameindatabase != None and usernameindatabase.status == 'alumni':
 			if username == userlogin.username :
 				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase})
@@ -84,11 +71,6 @@ def profile(response, username) :
 				return render(response, 'web/MyprofileSiswa.html', {'user' : usernameindatabase})
 			else :
 				return render(response, 'web/profileSiswa.html', {'user' : usernameindatabase})
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 		else  :
 			return render(response, 'web/profileNotFound.html')
 	else :
