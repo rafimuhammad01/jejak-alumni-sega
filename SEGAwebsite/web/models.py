@@ -13,7 +13,11 @@ class User(models.Model) :
 	jalur = models.CharField("Jalur",max_length=50, default="-")
 	skor_1 = models.CharField("Skor 1",max_length=50, default="-")
 	skor_2 = models.CharField("Skor 2",max_length=50, default="-")
+<<<<<<< HEAD
+	tahunlulus = models.CharField("Tahun Lulus", max_length=50, default="-")
+=======
 	tahunlulus = models.CharField("Tauhun Lulus", max_length=50, default="-")
+>>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 	tahunmasuk = models.CharField("Tahun Masuk",max_length=50, default="-")
 	refrensi = models.CharField("Refrensi",max_length=50, default="-")
 	pesan = models.TextField("Pesan",max_length=200, default="-")

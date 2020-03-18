@@ -1,8 +1,7 @@
-
 .kolomFooter {
 	width: 100%;
 	background-color: transparent;
-	height: 100px;
+	height: 80px;
 	padding : 220px 0px 0px 0px;
 }
 
@@ -11,12 +10,12 @@
 	height: 100%;
 	background-color: #9f1717;
 	float: left;
-	padding : 20px 0px 0px 0px;
+	padding : 10px 0px 0px 0px;
 }
 
 .gambar {
-	width: 200px;
-	height: 70px;
+	width: 150px;
+	height: 60px;
 	border-radius: 0px;
 	margin-left: auto;
 	margin-right: auto;
@@ -30,16 +29,23 @@
 	float: left;
 	text-align: center;
 	color: white;
-	padding: 10px 0px
+	padding: 10px 0px 0px 0px;
+	font-size : 10px;
 }
 
 .tulisanFooter p {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .mobile {
 	display: none;
 }
+
+a {
+	color: white;
+	font-size: 11px;
+}
+
 
 @media screen and (max-width: 900px) {
 

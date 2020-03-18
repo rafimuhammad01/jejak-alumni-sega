@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.rows{
+  float : left;
+  width : 100%;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.Team {
+  padding : 30px 300px;
+  background-color: transparent;
+  color: black;
+}
+
+.cardTeam {
+  float: center;
+  width : 80%;
+  padding : 5px;
+  background-color: #0f1c26;
+  border-radius : 10px;
+  height : 175px;
+}
+
+
+.col25 {
+  float: left;
+  width: 115px;
+  padding: 0px 5px;
+  height: 145px;
+}
+.col75 {
+  float: right;
+  width: 70%;
+  padding: 1px;
+  height: 100px;
+  color : white;
+  font-size: 15px;
+}
+
+body {
+	padding: 10px 100px 0px 100px;
+	background-color: white;
+}
+
+.col25 .desktop {
+	display: inline;
+}
+.col25 .mobile {
+	display: none;
+}
+@media screen and (min-width: 901px) and (max-width: 1130px) {
+	body {
+		padding: 10px 80px;
+		font-size: 12px;
+	}
+	.Team {
+		padding: 0px 300px;
+	}
+	.cardTeam {
+		width: 100%;
+		height: 130px;
+	}
+	.col25 {
+		height: 100px;
+		width: 85px;
+		padding: 5px;
+	}
+	.col75 {
+		width: 65%;
+		font-size: 10px;
+	}
+	.col25 .desktop {
+		display: none;
+	}
+	.col25 .mobile {
+		display: inline;
+	}
+}
+
+
+@media screen and (max-width: 900px) {
+	body {
+		padding: 10px 20px;
+		font-size: 12px;
+	}
+	.Team {
+		padding: 0px 20px;
+	}
+	.cardTeam {
+		width: 100%;
+		height: 120px;
+	}
+	.col25 {
+		height: 100px;
+		width: 85px;
+	}
+	.col75 {
+		width: 65%;
+		font-size: 10px;
+	}
+	.col25 .desktop {
+		display: none;
+	}
+	.col25 .mobile {
+		display: inline;
+	}
+}

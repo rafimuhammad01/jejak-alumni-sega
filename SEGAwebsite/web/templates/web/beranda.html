@@ -19,60 +19,60 @@
 
   <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form method="POST" netlify, action="" enctype = "multipart/form-data">
+      <form method="POST" netlify, action="" enctype = "multipart/form-data">
         <div class="container">
             <h1>Filter Pencarian</h1>
             <p>Atur pencarian sesuai dengan kebutuhanmu.</p>
             <hr color=yellow>
 
-      <form method="POST", action="" enctype = "multipart/form-data">
-      <form padding="20px">
-          <p> <strong>Perguruan Tinggi:</strong> </p>
-          <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
-          <input type="radio"  name="Univ" value="PTN" > Perguruan Tinggi Negeri <br>
-          <input type="radio"  name="Univ" value="PTS" > Perguruan Tinggi Swasta <br>
-          <input type="radio"  name="Univ" value="PTK" > Perguruan Tinggi Kedinasan <br>
-          <input type="radio"  name="Univ" value="PT" > Perguruan Tinggi : <input type="text" name="Nama_P">
+          <form method="POST", action="" enctype = "multipart/form-data">
+            <form padding="20px">
+              <p> <strong>Perguruan Tinggi:</strong> </p>
+              <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
+              <input type="radio"  name="Univ" value="PTN" > Perguruan Tinggi Negeri <br>
+              <input type="radio"  name="Univ" value="PTS" > Perguruan Tinggi Swasta <br>
+              <input type="radio"  name="Univ" value="PTK" > Perguruan Tinggi Kedinasan <br>
+              <input type="radio"  name="Univ" value="PT" > Perguruan Tinggi : <input type="text" name="Nama_P">
 
-          <p><strong>Fakultas</strong></p>
-          <input type="radio" name="Fakultas" value="*" checked> Semua Fakultas <br>
-          <input type="radio" name="Fakultas" value="F"> Fakultas : <input type="text" name="Nama_F">
+              <p><strong>Fakultas</strong></p>
+              <input type="radio" name="Fakultas" value="*" checked> Semua Fakultas <br>
+              <input type="radio" name="Fakultas" value="F"> Fakultas : <input type="text" name="Nama_F">
 
-          <p><strong>Jurusan</strong></p>
-          <input type="radio" name = "Jurusan" value="*" checked> Semua Jurusan <br>
-          <input type="radio" name = "Jurusan" value="J"> Jurusan: <input type="text" name="Nama_J">
+              <p><strong>Jurusan</strong></p>
+              <input type="radio" name = "Jurusan" value="*" checked> Semua Jurusan <br>
+              <input type="radio" name = "Jurusan" value="J"> Jurusan: <input type="text" name="Nama_J">
 
-          <p> <strong>Tahun Masuk:</strong> </p>
-          <input type="radio" name = "Tahun_M" value="*" checked> Semua Tahun <br>
-          <input type="radio" name = "Tahun_M" value="2019" > 2019 <br>
-          <input type="radio" name = "Tahun_M" value="2018" > 2018 <br>
-          <input type="radio" name = "Tahun_M" value="2017" > 2017 <br>
+              <p> <strong>Tahun Masuk:</strong> </p>
+              <input type="radio" name = "Tahun_M" value="*" checked> Semua Tahun <br>
+              <input type="radio" name = "Tahun_M" value="2019" > 2019 <br>
+              <input type="radio" name = "Tahun_M" value="2018" > 2018 <br>
+              <input type="radio" name = "Tahun_M" value="2017" > 2017 <br>
 
-          <p> <strong>Jalur Masuk:</strong> </p>
-          <input type="radio" name = "Jalur_M" value="*" checked> Semua Jalur <br>
-          <input type="radio" name = "Jalur_M" value="SNMPTN" > SNMPTN <br>
-          <input type="radio" name = "Jalur_M" value="SBMPTN" > SBMPTN<br>
-          <input type="radio" name = "Jalur_M" value="Mandiri" > Mandiri <br>
-          <input type="radio" name = "Jalur_M" value="Lainnya" > Lainnya
+              <p> <strong>Jalur Masuk:</strong> </p>
+              <input type="radio" name = "Jalur_M" value="*" checked> Semua Jalur <br>
+              <input type="radio" name = "Jalur_M" value="SNMPTN" > SNMPTN <br>
+              <input type="radio" name = "Jalur_M" value="SBMPTN" > SBMPTN<br>
+              <input type="radio" name = "Jalur_M" value="Mandiri" > Mandiri <br>
+              <input type="radio" name = "Jalur_M" value="Lainnya" > Lainnya
 
-        <div class="desktop">
-              <button style="padding : 15px;font-size:20px"><strong>Cari</strong></button>
+              <div class="desktop">
+                    <button style="padding : 15px;font-size:20px"><strong>Cari</strong></button>
+              </div>
+              <div class="mobile">
+                    <button style="padding : 10px;font-size:12px"><strong>Cari</strong></button>
+              </div>
+
+            </form>
+          </form>
         </div>
-        <div class="mobile">
-              <button style="padding : 10px;font-size:12px"><strong>Cari</strong></button>
-        </div>
-
-</form>
-</form>
-    </div>
+      </form>
   </div>
 </div>
 <br>
 <br>
 
 
-
-  <div class="cardBlok">
+<div class="cardBlok">
   {% for i in data %}
     {% if i.jurusan != "-" and i.status == 'alumni' %}
       <div class="card">
@@ -87,8 +87,10 @@
       </div>
     {% endif %}
   {% endfor%}
-
 </div>
-  
+
 </body>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+{% include "footer.html" %}
 </html>
+

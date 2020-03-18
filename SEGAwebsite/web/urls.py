@@ -9,8 +9,9 @@ urlpatterns = [
     path('', views.beranda, name="web-Beranda"),
     path('profile/<username>/', views.profile, name="web-Profile"),
     path('profile/edit/<username>/', views.editProfile, name="web-EditProfile"),
-    path('Statistik/Universitas', StatistikUnivChartView.as_view(), name="web-StatistikByUniv"),
-    path('Statistik/JalurMasuk', StatistikJalurChartView.as_view(), name="web-StatistikByJalur"),
+    path('Statistik/Universitas', views.statistikUniv, name="web-StatistikByUniv"),
+    path('Statistik/JalurMasuk', views.statistikJalur, name="web-StatistikByJalur"),
+    path('aboutUs' , views.aboutUs, name="web-aboutUs"), 
     path('register/', views.register, name="web-Register"),
     path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True), name='login'),
 ]

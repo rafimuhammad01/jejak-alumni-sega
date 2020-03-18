@@ -14,6 +14,13 @@ from django.views.generic import TemplateView
 import random
 
 
+def aboutUs(response):
+	if response.user.is_authenticated :
+		user = User.objects.get(username=response.user.get_username())
+		allUser = User.objects.all()
+		return render(response, 'web/aboutUs.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
+	else :
+		return redirect('login')
 
 def beranda(response):
 	if response.user.is_authenticated :
@@ -41,9 +48,17 @@ def beranda(response):
 			else :
 				form = sortBy()
 				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
+<<<<<<< HEAD
+
 		else :
 			messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
+
+=======
+		else :
+			messages.info(response, 'Silahkan Lengkapi Profile Anda')
+			return redirect('web-EditProfile', username=user.username)
+>>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 	else :
 		return redirect('login')
 
@@ -51,7 +66,11 @@ def profile(response, username) :
 	if response.user.is_authenticated :
 		usernameindatabase = User.objects.filter(username=username).first()
 		userlogin = User.objects.get(username=response.user.get_username())
+<<<<<<< HEAD
+		#if usernameindatabase != None and usernameindatabase.jurusan != "-" and usernameindatabase.status == 'alumni':
+=======
 
+>>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 		if usernameindatabase != None and usernameindatabase.status == 'alumni':
 			if username == userlogin.username :
 				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase})
@@ -65,7 +84,11 @@ def profile(response, username) :
 				return render(response, 'web/MyprofileSiswa.html', {'user' : usernameindatabase})
 			else :
 				return render(response, 'web/profileSiswa.html', {'user' : usernameindatabase})
+<<<<<<< HEAD
+		
+=======
 
+>>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 		else  :
 			return render(response, 'web/profileNotFound.html')
 	else :
@@ -102,9 +125,99 @@ def editProfile(request,username):
 	else :
 		return redirect('login')
 
-def statistik(request) : 
+def statistikUniv(response) : 
+	if response.user.is_authenticated:
+		user = User.objects.get(username=response.user.get_username())
+		allUser = User.objects.all()		 
+		Univ = {} #dict buat nyimpen univ dan jumlah
+		listUniv = [] #list buat simpen Univ maksimal 10
+		jumlahUniv = [] #list buat jumlah Univ maksimal 10
+		#Note : univ di listUniv index 0, jumlahnya ada di jumlahUniv index 0 juga, jadi indexnya sama
 
-	return render(request, 'web/statistik.html')
+		sisa = 0
+		total = 0 #Variabel ini berguna kalo jumlah univnya lebih dari 9, jadi nanti sisa univ akan masuk ke "Lainnya"
+		#For loop buat ngisi dict Univ
+		for item in allUser :
+			if item.univ in Univ and item.univ != "-":
+				Univ[item.univ] += 1
+			elif item.univ != "-":
+				Univ[item.univ] = 1
+		Univ = sorted(Univ.items(), key = lambda kv:(kv[1], kv[0]), reverse = True)
+		
+		for val in Univ :
+			sisa += val[1]
+		total = sisa
+		if len(Univ) > 10 :
+			for item in Univ :
+				if len(listUniv) == 9 : #berhubung cu
+					break
+				listUniv.append(item[0])
+				jumlahUniv.append(item[1])
+				sisa -= item[1]
+			listUniv.append('Lainnya')
+			jumlahUniv.append(sisa)
+		else :
+			for item in Univ :
+				listUniv.append(item[0])
+				jumlahUniv.append(item[1])
+		persenUniv = []
+		persenAtas = [] #buat gambar diagram batang
+		for jumlah in jumlahUniv :
+			persenUniv.append(round(jumlah/total*100))
+			persenAtas.append(round(100-(jumlah/total*100)))
+
+		hasil = zip(listUniv,persenUniv,persenAtas)
+
+		return render(response, 'web/statistikUniv.html', {"hasil" : hasil,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
+	else :
+		return redirect('login')
+
+def statistikJalur(response) : 
+	if response.user.is_authenticated:
+		user = User.objects.get(username=response.user.get_username())
+		allUser = User.objects.all()
+		Jalur = {} #dict buat nyimpen jalur dan jumlah
+		listJalur = [] #list buat simpen Univ maksimal 10
+		jumlahJalur = [] #list buat jumlah Univ maksimal 10
+		#Note : univ di listUniv index 0, jumlahnya ada di jumlahUniv index 0 juga, jadi indexnya sama
+
+		sisa = 0
+		total = 0 #Variabel ini berguna kalo jumlah univnya lebih dari 9, jadi nanti sisa univ akan masuk ke "Lainnya"
+		#For loop buat ngisi dict Univ
+		for item in allUser :
+			if item.jalur in Jalur and item.jalur != "-":
+				Jalur[item.jalur] += 1
+			elif item.jalur != "-":
+				Jalur[item.jalur] = 1
+		Jalur = sorted(Jalur.items(), key = lambda kv:(kv[1], kv[0]), reverse = True)
+		
+		for val in Jalur :
+			sisa += val[1]
+		total = sisa
+		if len(Jalur) > 3 :
+			for item in Jalur :
+				if len(listJalur) == 3 : #berhubung cu
+					break
+				listJalur.append(item[0])
+				jumlahJalur.append(item[1])
+				sisa -= item[1]
+			listJalur.append('Lainnya')
+			jumlahJalur.append(sisa)
+		else :
+			for item in Jalur :
+				listJalur.append(item[0])
+				jumlahJalur.append(item[1])
+		persenJalur = []
+		persenAtas = [] #buat gambar diagram batang
+		for jumlah in jumlahJalur :
+			persenJalur.append(round(jumlah/total*100))
+			persenAtas.append(round(100-(jumlah/total*100)))
+
+		hasil = zip(listJalur,persenJalur,persenAtas)
+
+		return render(response, 'web/statistikJalur.html', {"hasil" : hasil,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
+	else :
+		return redirect('login')
 
 
 def register (response):
