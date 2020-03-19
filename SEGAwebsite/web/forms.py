@@ -7,6 +7,8 @@ from django.forms import Textarea, CharField
 
 from .models import PerguruanTinggi
 
+from .models import PerguruanTinggi
+
 class UserRegistrationForm(UserCreationForm):
 	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
 

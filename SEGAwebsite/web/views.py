@@ -28,7 +28,11 @@ def beranda(response):
 		allUser = User.objects.all().order_by('nama')
 		if user.kontak != "-" and user.jurusan != "-" and user.fakultas != "-" and user.univ != "-" and user.jalur != "-"  and user.tahunlulus != "-" and user.tahunmasuk != "-" and user.refrensi != "-" and user.pesan != "-" :
 			if response.method == 'POST' :
+<<<<<<< HEAD
 
+=======
+				
+>>>>>>> ae181fb0de7573ebe9defa2a9473fb53f3a82dd1
 				filtering = User.objects.all().order_by('nama')
 				if response.POST.get('Fakultas') != '*':
 					filtering = User.objects.filter(fakultas__contains=response.POST.get('Nama_F'))
@@ -51,7 +55,10 @@ def beranda(response):
 						for j in filtering :
 							if j.univ in dataPT :
 								dataFix.append(j)	
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae181fb0de7573ebe9defa2a9473fb53f3a82dd1
 						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : dataFix})
 					
 					elif response.POST.get('Univ') == 'PT' :
@@ -71,8 +78,11 @@ def profile(response, username) :
 	if response.user.is_authenticated :
 		usernameindatabase = User.objects.filter(username=username).first()
 		userlogin = User.objects.get(username=response.user.get_username())
+<<<<<<< HEAD
 		user = User.objects.get(username=response.user.get_username())
 		allUser = User.objects.all()
+=======
+>>>>>>> ae181fb0de7573ebe9defa2a9473fb53f3a82dd1
 		if usernameindatabase != None and usernameindatabase.status == 'alumni':
 			if username == userlogin.username :
 				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
@@ -314,4 +324,7 @@ class StatistikJalurChartView (TemplateView) :
 		context['warnaBackground'] = warnaBackground
 		context['warnaBorder'] = warnaBorder
 		return context
+
+
+
 

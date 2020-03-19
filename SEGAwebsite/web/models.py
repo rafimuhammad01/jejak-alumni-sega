@@ -28,4 +28,8 @@ class PerguruanTinggi(models.Model) :
 	status = models.CharField('Status', max_length=50)
 
 	def __str__(self):
+<<<<<<< HEAD
 		return "{}".format(self.nama)
+=======
+		return "{}".format(self.nama)
+>>>>>>> ae181fb0de7573ebe9defa2a9473fb53f3a82dd1
