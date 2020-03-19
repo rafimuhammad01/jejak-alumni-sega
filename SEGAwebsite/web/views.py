@@ -25,29 +25,37 @@ def aboutUs(response):
 def beranda(response):
 	if response.user.is_authenticated :
 		user = User.objects.get(username=response.user.get_username())
-		allUser = User.objects.all()
+		allUser = User.objects.all().order_by('nama')
 		if user.kontak != "-" and user.jurusan != "-" and user.fakultas != "-" and user.univ != "-" and user.jalur != "-"  and user.tahunlulus != "-" and user.tahunmasuk != "-" and user.refrensi != "-" and user.pesan != "-" :
 			if response.method == 'POST' :
-				form = sortBy(response.POST)
-				if form.is_valid(): 
-					if form.cleaned_data['sort_By'] == 'Universitas' :
-						allUser = User.objects.all().order_by(Lower('univ'))
-						if form.cleaned_data['search'] != "" :
-							allUser = User.objects.filter(univ__contains=form.cleaned_data['search'])
-						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-					elif form.cleaned_data['sort_By'] == 'Jurusan' :
-						allUser = User.objects.all().order_by(Lower('jurusan'))
-						if form.cleaned_data['search'] != "" :
-							allUser = User.objects.filter(jurusan__contains=form.cleaned_data['search'])
-						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-					elif form.cleaned_data['sort_By'] == 'Nama' :
-						allUser = User.objects.all().order_by(Lower('nama'))
-						if form.cleaned_data['search'] != "" :
-							allUser = User.objects.filter(nama__contains=form.cleaned_data['search'])
-						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
+				dataFix = []
+				filtering = User.objects.all().order_by('nama')
+				if response.POST.get('Fakultas') != '*':
+					filtering = User.objects.filter(fakultas__contains=response.POST.get('Nama_F'))
+
+				if response.POST.get("Jurusan") != "*" :
+					filtering = filtering.filter(jurusan__contains=response.POST.get('Nama_J'))
+
+				if response.POST.get("Tahun_M") != "*" :
+					filtering = filtering.filter(tahunmasuk__contains=response.POST.get('Tahun_M'))
+
+				if response.POST.get("Jalur_M") != "*" :
+					filtering = filtering.filter(jalur__contains=response.POST.get('Jalur_M'))
+
+				if response.POST.get("Univ") != "*" :
+					if response.POST.get("Univ") != "PT" :
+						for i in filtering :
+							if i.univ in PerguruanTinggi.objects.filter(status=response.POST.get('Univ')) :
+								dataFix.append(i)
+						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : dataFix})
+					
+					elif response.POST.get('Univ') == 'PT' :
+						filtering = filtering.filter(univ__contains=response.POST.get('Nama_P'))
+
+				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : filtering})
+			
 			else :
-				form = sortBy()
-				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
+				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 		else :
 			messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
@@ -299,4 +307,7 @@ class StatistikJalurChartView (TemplateView) :
 		context['warnaBackground'] = warnaBackground
 		context['warnaBorder'] = warnaBorder
 		return context
+
+
+
 

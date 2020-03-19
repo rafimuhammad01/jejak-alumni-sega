@@ -25,13 +25,14 @@
             <p>Atur pencarian sesuai dengan kebutuhanmu.</p>
             <hr color=yellow>
 
+          {% csrf_token %}  
           <form method="POST", action="" enctype = "multipart/form-data">
             <form padding="20px">
               <p> <strong>Perguruan Tinggi:</strong> </p>
               <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
-              <input type="radio"  name="Univ" value="PTN" > Perguruan Tinggi Negeri <br>
-              <input type="radio"  name="Univ" value="PTS" > Perguruan Tinggi Swasta <br>
-              <input type="radio"  name="Univ" value="PTK" > Perguruan Tinggi Kedinasan <br>
+              <input type="radio"  name="Univ" value="Negeri" > Perguruan Tinggi Negeri <br>
+              <input type="radio"  name="Univ" value="Swasta" > Perguruan Tinggi Swasta <br>
+              <input type="radio"  name="Univ" value="Kedinasan" > Perguruan Tinggi Kedinasan <br>
               <input type="radio"  name="Univ" value="PT" > Perguruan Tinggi : <input type="text" name="Nama_P">
 
               <p><strong>Fakultas</strong></p>
