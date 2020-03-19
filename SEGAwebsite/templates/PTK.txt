@@ -1,0 +1,133 @@
+Institut Pemerintahan Dalam Negeri (IPDN)
+Politeknik Energi dan Mineral Akamigas (PEM Akamigas)
+Politeknik Ilmu Pemasyarakatan (POLTEKIP)
+Politeknik Imigrasi (POLTEKIM)
+Sekolah Tinggi Pariwisata Bandung
+Sekolah Tinggi Pariwisata Bali
+Politeknik Pariwisata Medan
+Politeknik Pariwisata Makassar
+Politeknik Pariwisata Palembang
+Politeknik Pariwisata Lombok
+Politeknik Keuangan Negara STAN (PKN STAN)
+Balai Diklat Aparatur Sukamandi
+Balai Pendidikan dan Pelatihan Perikanan Aertembaga
+Balai Pendidikan dan Pelatihan Perikanan Ambon
+Balai Pendidikan dan Pelatihan Perikanan Banyuwangi
+Balai Pendidikan dan Pelatihan Perikanan Belawan
+Balai Pendidikan dan Pelatihan Perikanan Tegal
+Politeknik Kelautan dan Perikanan Bitung
+Politeknik Kelautan dan Perikanan Sidoarjo
+Politeknik Kelautan dan Perikanan Sorong
+Sekolah Tinggi Perikanan (STP) Bogor
+Sekolah Tinggi Perikanan (STP) Jakarta
+Sekolah Usaha Perikanan Menengah Negeri Bone
+Sekolah Usaha Perikanan Menengah Negeri Kota Agung
+Sekolah Usaha Perikanan Menengah Negeri Ladong
+Sekolah Usaha Perikanan Menengah Negeri Pariaman
+Sekolah Usaha Perikanan Menengah Negeri Pontianak
+Sekolah Usaha Perikanan Menengah Negeri Sorong
+Poltekkes Ambon
+Poltekkes Aceh
+Poltekkes Bandung
+Poltekkes Banjarmasin
+Poltekkes Banten
+Poltekkes Bengkulu
+Poltekkes Denpasar
+Poltekkes Gorontalo
+Poltekkes Jakarta I
+Poltekkes Jakarta II
+Poltekkes Jakarta III, Bekasi
+Poltekkes Jambi
+Poltekkes Jayapura
+Poltekkes Kalimantan Timur
+Poltekkes Kendari
+Poltekkes Kupang
+Poltekkes Makassar
+Poltekkes Malang
+Poltekkes Mamuju
+Poltekkes Manado
+Poltekkes Mataram
+Poltekkes Medan
+Poltekkes Padang
+Poltekkes Pangkal Pinang
+Poltekkes Palangkaraya
+Poltekkes Palembang
+Poltekkes Palu
+Poltekkes Pontianak
+Poltekkes Riau
+Poltekkes Semarang
+Poltekkes Sorong
+Poltekkes Surabaya
+Poltekkes Surakarta
+Poltekkes Tanjungkarang
+Poltekkes Tanjung Pinang
+Poltekkes Tasikmalaya
+Poltekkes Ternate
+Poltekkes Yogyakarta
+Akademi Fisioterapi Surakarta
+Akademi Keperawatan
+Akademi Teknik Medik
+Sekolah Tinggi Multi Media "MMTC" Yogyakarta
+Polteknik Transportasi Darat Indonesia STTD
+Politeknik Keselamatan Transportasi Jalan (PKTJ)
+Politeknik Perkeretaapian Indonesia
+Politeknik Transportasi Darat Bali
+Politeknik Transportasi Sungai, Danau, dan Penyeberangan
+Balai Pendidikan dan Pelatihan Transportasi Darat Mempawah
+Sekolah Tinggi Ilmu Pelayaran Jakarta
+Politeknik Ilmu Pelayaran (PIP) Semarang
+Politeknik Ilmu Pelayaran (PIP) Makassar
+Politeknik Pelayaran Surabaya
+Politeknik Pelayaran Sumatera Barat
+Politeknik Pelayaran Banten
+Politeknik Pelayaran Malahayati
+Politeknik Pelayaran Barombong
+Politeknik Pelayaran Sorong
+Politeknik Pelayaran Sulawesi Utara
+Balai Besar Pendidikan Penyegaran dan Peningkatan Ilmu Pelayaran (BP3IP) Jakarta
+Balai Pendidikan dan Pelatihan Transportasi Laut (BP2TL) Jakarta
+Politeknik Penerbangan Indonesia Curug
+Politeknik Penerbangan Surabaya
+Politeknik Penerbangan Makassar
+Politeknik Penerbangan Medan
+Politeknik Penerbangan Palembang
+Politeknik Penerbangan Jayapura
+Akademi Penerbang Indonesia Banyuwangi
+Balai Pendidikan dan Pelatihan Penerbangan Curug
+Politeknik STMI Jakarta
+Akademi Tekstil Solo Solo
+Politeknik STTT Bandung
+Politeknik APP Jakarta
+Politeknik AKA Bogor
+Politeknik ATK Yogyakarta
+Politeknik ATI Padang
+Politeknik ATI Makassar
+Politeknik Teknologi Kimia Industri Medan
+Politeknik Industri Furnitur dan Pengolahan Kayu Kendal
+Akademi Militer (TNI AD), Magelang
+Akademi Angkatan Laut (TNI AL), Surabaya
+Akademi Angkatan Udara (TNI AU), Yogyakarta
+Politeknik Angkatan Darat (Poltekad), Malang
+Sekolah Tinggi Teknologi Angkatan Laut, Surabaya
+Universitas Pertahanan Indonesia (UNHAN)
+Universitas Pertahanan Palembang
+Politeknik Pembangunan Pertanian Medan
+Politeknik Pembangunan Pertanian Yogyakarta Magelang
+Politeknik Pembangunan Pertanian Gowa
+Politeknik Pembangunan Pertanian Malang
+Politeknik Pembangunan Pertanian Bogor
+Politeknik Pembangunan Pertanian Manokwari
+Politeknik Pekerjaan Umum, Semarang
+Akademi Metrologi dan Instrumentasi, Bandung
+Politeknik Ketenagakerjaan, Bekasi
+Politeknik Kesejahteraan Sosial, Bandung
+Sekolah Tinggi Intelijen Negara, Bogor
+Sekolah Tinggi Meteorologi Klimatologi dan Geofisika (STMKG) Jakarta
+Sekolah Tinggi Pertanahan Nasional (STPN)
+Politeknik Statistika STIS (Polstat STIS)
+Sekolah Tinggi Teknologi Nuklir (STTN), Yogyakarta
+Sekolah Tinggi Ilmu Administrasi Negara - Lembaga Administrasi Negara, Bandung
+Sekolah Tinggi Sandi Negara (STSN), Bogor
+Akademi Kepolisian (Akpol), Semarang
+Sekolah Inspektur Polisi Sumber Sarjana (SIPSS)
+Sekolah Tinggi Ilmu Kepolisian ,Jakarta Selatan
