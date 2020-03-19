@@ -7,10 +7,10 @@ from django.core.exceptions import ValidationError
 from .models import PerguruanTinggi
 
 class UserRegistrationForm(UserCreationForm):
-	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
 
 class editProfile(forms.ModelForm):
-	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
 	univ = forms.ModelChoiceField(queryset=PerguruanTinggi.objects.all().order_by("nama"))
 	class Meta :
 		model = myUser
@@ -39,7 +39,7 @@ class editProfile(forms.ModelForm):
 		return self.cleaned_data['fakultas'].title()
 
 class editProfileSiswa(forms.ModelForm):
-	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
 	class Meta :
 		model = myUser
 		fields = [

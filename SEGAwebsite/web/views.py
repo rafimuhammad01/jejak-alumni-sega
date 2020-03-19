@@ -74,7 +74,7 @@ def profile(response, username) :
 			else :
 				return render(response, 'web/profile.html', {'user' : usernameindatabase})
 		
-		elif usernameindatabase != None and usernameindatabase.status == 'siswa':
+		elif usernameindatabase != None and (usernameindatabase.status == 'siswa' or usernameindatabase.status == 'gapyear/kerja'):
 			if  username == userlogin.username :
 				return render(response, 'web/MyprofileSiswa.html', {'user' : usernameindatabase})
 			else :
