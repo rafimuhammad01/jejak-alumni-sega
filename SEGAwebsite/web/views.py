@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import editProfile as eP
 from .forms import editProfileSiswa as ePS
-from .models import User
+from .models import User, PerguruanTinggi
 
 from django.shortcuts import render
 from django.contrib.auth import login, authenticate
@@ -25,40 +25,45 @@ def aboutUs(response):
 def beranda(response):
 	if response.user.is_authenticated :
 		user = User.objects.get(username=response.user.get_username())
-		allUser = User.objects.all()
+		allUser = User.objects.all().order_by('nama')
 		if user.kontak != "-" and user.jurusan != "-" and user.fakultas != "-" and user.univ != "-" and user.jalur != "-"  and user.tahunlulus != "-" and user.tahunmasuk != "-" and user.refrensi != "-" and user.pesan != "-" :
 			if response.method == 'POST' :
-				form = sortBy(response.POST)
-				if form.is_valid(): 
-					if form.cleaned_data['sort_By'] == 'Universitas' :
-						allUser = User.objects.all().order_by(Lower('univ'))
-						if form.cleaned_data['search'] != "" :
-							allUser = User.objects.filter(univ__contains=form.cleaned_data['search'])
-						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-					elif form.cleaned_data['sort_By'] == 'Jurusan' :
-						allUser = User.objects.all().order_by(Lower('jurusan'))
-						if form.cleaned_data['search'] != "" :
-							allUser = User.objects.filter(jurusan__contains=form.cleaned_data['search'])
-						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-					elif form.cleaned_data['sort_By'] == 'Nama' :
-						allUser = User.objects.all().order_by(Lower('nama'))
-						if form.cleaned_data['search'] != "" :
-							allUser = User.objects.filter(nama__contains=form.cleaned_data['search'])
-						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
+
+				filtering = User.objects.all().order_by('nama')
+				if response.POST.get('Fakultas') != '*':
+					filtering = User.objects.filter(fakultas__contains=response.POST.get('Nama_F'))
+
+				if response.POST.get("Jurusan") != "*" :
+					filtering = filtering.filter(jurusan__contains=response.POST.get('Nama_J'))
+
+				if response.POST.get("Tahun_M") != "*" :
+					filtering = filtering.filter(tahunmasuk__contains=response.POST.get('Tahun_M'))
+
+				if response.POST.get("Jalur_M") != "*" :
+					filtering = filtering.filter(jalur__contains=response.POST.get('Jalur_M'))
+
+				if response.POST.get("Univ") != "*" :
+					if response.POST.get("Univ") != "PT" :
+						dataFix = []
+						dataPT = []
+						for i in PerguruanTinggi.objects.filter(status=response.POST.get('Univ')) :
+							dataPT.append(i.nama)
+						for j in filtering :
+							if j.univ in dataPT :
+								dataFix.append(j)	
+
+						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : dataFix})
+					
+					elif response.POST.get('Univ') == 'PT' :
+						filtering = filtering.filter(univ__contains=response.POST.get('Nama_P'))
+
+				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : filtering})
+			
 			else :
-				form = sortBy()
-				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-<<<<<<< HEAD
-
+				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 		else :
 			messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
-
-=======
-		else :
-			messages.info(response, 'Silahkan Lengkapi Profile Anda')
-			return redirect('web-EditProfile', username=user.username)
->>>>>>> c78f01ca51cd3aeb18a44468573369c0d4fb906b
 	else :
 		return redirect('login')
 
@@ -66,25 +71,23 @@ def profile(response, username) :
 	if response.user.is_authenticated :
 		usernameindatabase = User.objects.filter(username=username).first()
 		userlogin = User.objects.get(username=response.user.get_username())
-<<<<<<< HEAD
-
-=======
->>>>>>> c78f01ca51cd3aeb18a44468573369c0d4fb906b
+		user = User.objects.get(username=response.user.get_username())
+		allUser = User.objects.all()
 		if usernameindatabase != None and usernameindatabase.status == 'alumni':
 			if username == userlogin.username :
-				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase})
+				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 			elif usernameindatabase.jurusan == "-" :
-				 return render(response, 'web/profileNotFound.html')
+				 return render(response, 'web/profileNotFound.html', {'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 			else :
-				return render(response, 'web/profile.html', {'user' : usernameindatabase})
+				return render(response, 'web/profile.html', {'user' : usernameindatabase,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 		
-		elif usernameindatabase != None and usernameindatabase.status == 'siswa':
+		elif usernameindatabase != None and (usernameindatabase.status == 'siswa' or usernameindatabase.status == 'gapyear/kerja'):
 			if  username == userlogin.username :
-				return render(response, 'web/MyprofileSiswa.html', {'user' : usernameindatabase})
+				return render(response, 'web/MyprofileSiswa.html', {'user' : usernameindatabase,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 			else :
-				return render(response, 'web/profileSiswa.html', {'user' : usernameindatabase})
+				return render(response, 'web/profileSiswa.html', {'user' : usernameindatabase,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 		else  :
-			return render(response, 'web/profileNotFound.html')
+			return render(response, 'web/profileNotFound.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 	else :
 		return redirect('login')
 
@@ -102,7 +105,8 @@ def editProfile(request,username):
 						return redirect('web-Profile',username=user.username)
 				else :
 					user = User.objects.get(username=request.user.get_username())
-					form = eP(instance=user)
+					univ = PerguruanTinggi.objects.get(nama=user.univ)
+					form = eP(instance=user, initial = {'univ' : univ.pk})
 			else :
 				if request.method == "POST": 
 					form = ePS(request.POST, instance=user)

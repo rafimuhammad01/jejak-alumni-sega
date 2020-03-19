@@ -18,9 +18,7 @@ body {
   height: 90px;
   border-radius: 0px;
 }
-
 .navbar {
-  
   overflow: hidden;
   background-color: transparent;
   color: black;
@@ -192,12 +190,12 @@ body {
   }
   .columnsNav {
     float: left;
-    width: 30%;
+    width: 20%;
   }
 
   .columnsNavBeranda {
     float: left;
-    width: 25%;
+    width: 20%;
     padding: 0px 0px;
   }
 }
@@ -205,60 +203,58 @@ body {
 
 @media screen and (max-width: 900px) {
   body {
-    padding: 10px 0px 10px 0px;
+      padding: 10px 0px 10px 0px;
 
-  }
-  .navbar a {
-    float: left;
-    padding: 5px 0px 0px 5px;
-    font-size: 9px;
-   }
+    }
+    .navbar a {
+      float: left;
+      padding: 5px 0px 0px 5px;
+      font-size: 9px;
+     }
 
-  .colGaris {
-    float: left;
-    width: 60%;
-    padding:5px 30px 20px 10px;
-    height: 5px;
-  }
+    .colGaris {
+      float: left;
+      width: 60%;
+      padding:5px 30px 20px 10px;
+      height: 2px;
+    }
 
-  .hrblok {
-    padding: 0px 100px 0px 10px;
+    .hrblok {
+      padding: 0px 100px 0px 10px;
+    }
 
-  }
+    .dropdown .dropbtn {
+      font-size: 5px;
+    }
+    .dropdown-content {
+      width: 5px;
+    }
+    .dropdown-content a {
+      float: left;
+      padding: 1px 12px;
+      text-align: left;
+      color: white;
+    }
+    .columnsNav {
+      float: left;
+      width: 35%;
+      padding: 0px;
+    }
+    .columnsNavBeranda {
+      float: left;
+      width: 20%;
+      padding: 0px 0px 0px 30px;
+    }
+    .columnsNavLogo {
+      float: left;
+      width: 100%;
+      padding: 20px 0px 0px 10px;
+    }
 
-
-  .dropdown .dropbtn {
-    font-size: 5px;
-  }
-  .dropdown-content {
-    width: 5px;
-  }
-  .dropdown-content a {
-    float: left;
-    padding: 1px 12px;
-    text-align: left;
-    color: white;
-  }
-  .columnsNav {
-    float: left;
-    width: 35%;
-    padding: 0px;
-  }
-  .columnsNavBeranda {
-    float: left;
-    width: 20%;
-    padding: 0px 0px 0px 30px;
-  }
-  .columnsNavLogo {
-    float: left;
-    width: 100%;
-    padding: 20px 0px 0px 10px;
-  }
-
-  .logo {
-    width: 200px; 
-    height: 60px;
-    border-radius: 0px;
-  }
+    .logo {
+      width: 200px; 
+      height: 60px;
+      border-radius: 0px;
+    }
 
 }

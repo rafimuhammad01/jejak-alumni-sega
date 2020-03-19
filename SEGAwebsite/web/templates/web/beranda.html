@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'web/beranda.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'web/beranda1.css' %}">
   <script type="text/javascript" src="{% static 'web/berandaModal.js' %}"></script>
 
 </head>
@@ -25,13 +25,14 @@
             <p>Atur pencarian sesuai dengan kebutuhanmu.</p>
             <hr color=yellow>
 
+          {% csrf_token %} 
           <form method="POST", action="" enctype = "multipart/form-data">
             <form padding="20px">
               <p> <strong>Perguruan Tinggi:</strong> </p>
               <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
-              <input type="radio"  name="Univ" value="PTN" > Perguruan Tinggi Negeri <br>
-              <input type="radio"  name="Univ" value="PTS" > Perguruan Tinggi Swasta <br>
-              <input type="radio"  name="Univ" value="PTK" > Perguruan Tinggi Kedinasan <br>
+              <input type="radio"  name="Univ" value="Negeri" > Perguruan Tinggi Negeri <br>
+              <input type="radio"  name="Univ" value="Swasta" > Perguruan Tinggi Swasta <br>
+              <input type="radio"  name="Univ" value="Kedinasan" > Perguruan Tinggi Kedinasan <br>
               <input type="radio"  name="Univ" value="PT" > Perguruan Tinggi : <input type="text" name="Nama_P">
 
               <p><strong>Fakultas</strong></p>
@@ -75,16 +76,16 @@
 <div class="cardBlok">
   {% for i in data %}
     {% if i.jurusan != "-" and i.status == 'alumni' %}
-      <div class="card">
+      <a href="/profile/{{i.username}}/"><div class="card">
       <img src="{{i.image.url}}" class="center">
       <br>
       <p class="nama">{{i.nama}}</p>
       <p class="jurusan">&#127760; {{i.jurusan}}</p>
-      <p class="univ">&#127891; {{i.jurusan}}</p>
+      <p class="univ">&#127891; {{i.univ}}</p>
       <br>
       <hr color=yellow>
       <p class="jalur">{{i.jalur}}</p>
-      </div>
+      </div></a>
     {% endif %}
   {% endfor%}
 </div>

@@ -1,9 +1,18 @@
+a{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'web/profileSiswaGap.css' %}">
 </head>
 <body>
-	<h1>Profile tidak ditemukan</h1>
+	{% include "Navbar.html" %}
+	<div class="kotakEdit">
+		<h1>Halo, {{user.nama}}!</h1>
+		<hr color=0f1c26>
+		<p>Sayang sekali profil yang kamu cari tidak ditemukan. Pastikan kamu tidak menginput username profil yang salah. Jika dirasa ada kendala, silahkan hubungi kami di email yang tertera di bagian bawah web ini.</p>
+	</div>
+	
+	
 </body>
+{% include "footer.html" %}
 </html>

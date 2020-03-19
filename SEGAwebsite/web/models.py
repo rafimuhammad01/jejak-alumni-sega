@@ -14,15 +14,18 @@ class User(models.Model) :
 	skor_1 = models.CharField("Skor 1",max_length=50, default="-")
 	skor_2 = models.CharField("Skor 2",max_length=50, default="-")
 	tahunlulus = models.CharField("Tahun Lulus", max_length=50, default="-")
-<<<<<<< HEAD
-=======
 	tahunlulus = models.CharField("Tauhun Lulus", max_length=50, default="-")
->>>>>>> c78f01ca51cd3aeb18a44468573369c0d4fb906b
 	tahunmasuk = models.CharField("Tahun Masuk",max_length=50, default="-")
-	refrensi = models.TextField("Refrensi",max_length=200, default="-")
-	pesan = models.TextField("Pesan",max_length=200, default="-")
+	refrensi = models.TextField("Refrensi",max_length=500, default="-")
+	pesan = models.TextField("Pesan",max_length=500,default="-")
 	image = models.ImageField("Foto",default='default.jpg', upload_to='profile_pics')
 
 	def __str__(self):
 		return "{} ({})".format(self.nama, self.nis)
 
+class PerguruanTinggi(models.Model) :
+	nama = models.CharField('Nama',max_length=100)
+	status = models.CharField('Status', max_length=50)
+
+	def __str__(self):
+		return "{}".format(self.nama)

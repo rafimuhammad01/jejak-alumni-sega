@@ -1,0 +1,80 @@
+img {
+  height : 100px;
+  width : 100px;
+  border-radius : 50%;
+}
+
+.namaProfil {
+	padding: 20px 0px 0px 0px;
+	font-size: 20px;
+
+}
+
+.centerProfil {
+  display : block;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+.profilBlok {
+	width: 100%;
+	height: 90px;
+	padding : 0px;
+	background-color: transparent;
+}
+
+.tulisanBlok {
+	width: 100%;
+	height: 500px;
+	padding : 0px;
+	background-color: transparent;
+}
+
+.blokTulisan {
+	border-radius: 10px;
+	padding: 0px 20px 20px 10px;
+	width: 80%;
+	background-color: #0f1c26;
+	float: left;
+	margin : 20px 0px 0px 20px;
+	height: 1000px;
+	color: white;
+}
+
+.blokSingkat {
+	padding: 40px 10px 20px 10px;
+	width: 30%;
+	background-color: transparent;
+	float: left;
+	height: 100%;
+	color: white;
+}
+
+.blokPadat .desktop {
+	display: none;
+}
+
+.blokPadat .mobile {
+	display: inline;
+}
+
+.blokPadat {
+	padding: 40px 0px 20px 0px;
+	width: 60%;
+	background-color: transparent;
+	float: left;
+	height: 100%;
+}
+
+.blokTulisan button {
+  background-color: #fed337;
+  height: 30px;
+  width: 80px;
+  color: #0f1c26;
+  font-size : 14px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  border-radius:5px;
+}

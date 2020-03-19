@@ -3,12 +3,16 @@ from .models import User as myUser
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+from django.forms import Textarea, CharField
+
+from .models import PerguruanTinggi
 
 class UserRegistrationForm(UserCreationForm):
-	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
 
 class editProfile(forms.ModelForm):
-	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
+	univ = forms.ModelChoiceField(queryset=PerguruanTinggi.objects.all().order_by("nama"))
 	class Meta :
 		model = myUser
 		fields = [
@@ -25,12 +29,12 @@ class editProfile(forms.ModelForm):
 			'pesan',
 			'status'
 			]
+		widgets = {
+			'pesan': Textarea(attrs={'cols':35}),'refrensi': Textarea(attrs={'cols':35}),
+		}
 
 	def clean_jurusan(self):
 		return self.cleaned_data["jurusan"].title()
-
-	def clean_univ(self):
-		return self.cleaned_data["univ"].title()
 
 	def clean_kontak(self):
 		return self.cleaned_data['kontak'].lower()
@@ -39,7 +43,7 @@ class editProfile(forms.ModelForm):
 		return self.cleaned_data['fakultas'].title()
 
 class editProfileSiswa(forms.ModelForm):
-	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
 	class Meta :
 		model = myUser
 		fields = [

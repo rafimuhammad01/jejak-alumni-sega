@@ -1,11 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'web/profileSiswaGap.css' %}">
 </head>
 <body>
-	<h1>{{user.nama}}</h1> <h1>{{user.status}}</h1>
-	<h1>{{user.kontak}}</h1>
-	<a href="/profile/edit/{{user.username}}">Edit Profile</a>
+	{% include "Navbar.html" %}
+	<div class="kotakEdit">
+		<h1>Halo, {{user.nama}}!</h1>
+		<hr color=0f1c26>
+		<p>Kartu profil hanya dimiliki oleh alumni yang berstatus sebagai mahasiswa. Edit profil kamu jika kamu ingin mengganti statusmu.</p>
+		<a href="/profile/edit/{{user.username}}">Edit Profil</a>	
+	</div>
+	
+	
 </body>
+{% include "footer.html" %}
 </html>

@@ -8,27 +8,69 @@
 <body>
 
 	{% include "Navbar.html" %}
-	<br><br><br><br><br><br>
+	
 	<div class="profilBlok">
 		<div class="blokSingkat">
 			<img src="{{user.image.url}}" class="centerProfil">
 		</div>
 		<div class="blokPadat">
 			<h1 class="namaProfil">{{user.nama}}</h1>
-			<br>
-			<hr color=9f1717 size="7">
+			<div class="desktop">
+				<br>
+				<hr color=9f1717 size="7">
+			</div>
+			<div class="mobile">
+				<hr color=9f1717 size="4">
+			</div>
 		</div>
 	</div>
-	<div class="tulisanBlok">
-		<div class="blokTulisan">
+	<div class="tulisanBlok" style="height: 1000px" >
+		<div class="blokTulisan" style="color: #fed337; height: 1300px">
 			<form method="post" action="">
 				{% csrf_token %}
-				{{ form.as_p }}
-				<button type="submit", name="save">Save</button>
+
+				<h3>Perguruan Tinggi</h3>
+				<p>{{ form.univ }}</p>
+
+				<h3>Fakultas</h3>
+				<p>{{ form.fakultas }}</p>
+
+				<h3>Jurusan</h3>
+				<p>{{ form.jurusan }}</p>
+
+				<h3>Jalur Masuk Universitas</h3>
+				<p>{{ form.jalur }}</p>
+
+				<h3>Skor UTBK 1</h3>
+				<p>{{ form.skor_1 }}</p>
+
+				<h3>Skor UTBK 2</h3>
+				<p>{{ form.skor_2 }}</p>
+
+				<h3>Tahun Lulus SMA</h3>
+				<p>{{ form.tahunlulus }}</p>
+
+				<h3>Tahun Masuk Universitas</h3>
+				<p>{{ form.tahunmasuk }}</p>
+
+				<h3>Kontak</h3>
+				<p>{{ form.kontak }}</p>
+
+				<h3>Referensi Belajar</h3>
+				<p>{{ form.refrensi }}</p>
+
+				<h3>Tips dan Trik</h3>
+				<p>{{ form.pesan }}</p>
+
+				<h3>Status</h3>
+				{{ form.status }}				
+				<button type="submit", name="save">Simpan</button>
 			</form>
 		</div>
 	</div>
-	<br><br><br><br><br><br><br><br><br>
+	<div class="desktopProfil">
+		<br><br><br><br><br><br><br><br><br><br><br>
+	</div>
 </body>
 	{% include "footer.html" %}
 </html>
