@@ -48,11 +48,17 @@ def beranda(response):
 			else :
 				form = sortBy()
 				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
+<<<<<<< HEAD
 
 		else :
 			messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
 
+=======
+		else :
+			messages.info(response, 'Silahkan Lengkapi Profile Anda')
+			return redirect('web-EditProfile', username=user.username)
+>>>>>>> c78f01ca51cd3aeb18a44468573369c0d4fb906b
 	else :
 		return redirect('login')
 
@@ -60,7 +66,10 @@ def profile(response, username) :
 	if response.user.is_authenticated :
 		usernameindatabase = User.objects.filter(username=username).first()
 		userlogin = User.objects.get(username=response.user.get_username())
+<<<<<<< HEAD
 
+=======
+>>>>>>> c78f01ca51cd3aeb18a44468573369c0d4fb906b
 		if usernameindatabase != None and usernameindatabase.status == 'alumni':
 			if username == userlogin.username :
 				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase})
