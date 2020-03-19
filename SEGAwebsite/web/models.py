@@ -26,3 +26,9 @@ class User(models.Model) :
 	def __str__(self):
 		return "{} ({})".format(self.nama, self.nis)
 
+class PerguruanTinggi(models.Model) :
+	nama = models.CharField('Nama',max_length=100)
+	status = models.CharField('Status', max_length=50)
+
+	def __str__(self):
+		return "{}".format(self.nama)

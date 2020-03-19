@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import editProfile as eP
 from .forms import editProfileSiswa as ePS
-from .models import User
+from .models import User, PerguruanTinggi
 
 from django.shortcuts import render
 from django.contrib.auth import login, authenticate
@@ -102,7 +102,8 @@ def editProfile(request,username):
 						return redirect('web-Profile',username=user.username)
 				else :
 					user = User.objects.get(username=request.user.get_username())
-					form = eP(instance=user)
+					univ = PerguruanTinggi.objects.get(nama=user.univ)
+					form = eP(instance=user, initial = {'univ' : univ.pk})
 			else :
 				if request.method == "POST": 
 					form = ePS(request.POST, instance=user)

@@ -4,11 +4,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+from .models import PerguruanTinggi
+
 class UserRegistrationForm(UserCreationForm):
 	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
 
 class editProfile(forms.ModelForm):
 	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa')))
+	univ = forms.ModelChoiceField(queryset=PerguruanTinggi.objects.all().order_by("nama"))
 	class Meta :
 		model = myUser
 		fields = [
@@ -28,9 +31,6 @@ class editProfile(forms.ModelForm):
 
 	def clean_jurusan(self):
 		return self.cleaned_data["jurusan"].title()
-
-	def clean_univ(self):
-		return self.cleaned_data["univ"].title()
 
 	def clean_kontak(self):
 		return self.cleaned_data['kontak'].lower()
