@@ -1,17 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'web/statistikJalur.css' %}">
 </head>
 <body>
 	{% include "Navbar.html" %}
-	<h1>TEST</h1>
-	{% for has in hasil %}
-		<p>{{has.0}}</p>
-		<p>{{has.1}}</p>
-		<p>{{has.2}}</p>
-	{% endfor %}
+
+	<div class="spaceBar">
+
+		<div class="kotakBar">
+			{% for has in hasilBar %}
+				<div class="kolomTotal">
+					<div class="kolomAtas" style="height:{{has.1}}%;"></div>
+					<div class="kolomPersen" style="height:{{has.0}}%;background-color:{{has.2}}"></div>
+				</div>
+			{% endfor %}
+			
+		</div>
+		<br><br>
+		<hr color=0f1c26>
+
+	</div>
+
+
+	<div class="space">
+		{% for has in hasilKeterangan %}
+			<div class="rowKeterangan">
+				<div class="kodeWarna" style="background-color:{{has.2}}"></div>
+				<div class="tulisanStat">
+					<p>{{has.0}} | {{has.1}}%</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+
+	<div class="space">
+		<div class="rowKeterangan"></div>
+		<table>
+			<tr>
+			    <th>Perguruan Tinggi</th>
+			    <th>Jumlah Alumni 103</th>
+			</tr>
+			{% for has in hasilTable %}
+				<tr>
+					<td>{{has.0}}</td>
+				    <td>{{has.1}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+		</div>
+	</div>
+
 
 </body>
-	{% include "footer.html" %}
+
 </html>

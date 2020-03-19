@@ -48,17 +48,11 @@ def beranda(response):
 			else :
 				form = sortBy()
 				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser, 'form' : form})
-<<<<<<< HEAD
 
 		else :
 			messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
 
-=======
-		else :
-			messages.info(response, 'Silahkan Lengkapi Profile Anda')
-			return redirect('web-EditProfile', username=user.username)
->>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 	else :
 		return redirect('login')
 
@@ -66,11 +60,7 @@ def profile(response, username) :
 	if response.user.is_authenticated :
 		usernameindatabase = User.objects.filter(username=username).first()
 		userlogin = User.objects.get(username=response.user.get_username())
-<<<<<<< HEAD
-		#if usernameindatabase != None and usernameindatabase.jurusan != "-" and usernameindatabase.status == 'alumni':
-=======
 
->>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 		if usernameindatabase != None and usernameindatabase.status == 'alumni':
 			if username == userlogin.username :
 				return render(response, 'web/Myprofile.html', {'user' : usernameindatabase})
@@ -84,11 +74,6 @@ def profile(response, username) :
 				return render(response, 'web/MyprofileSiswa.html', {'user' : usernameindatabase})
 			else :
 				return render(response, 'web/profileSiswa.html', {'user' : usernameindatabase})
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> f0ffb19a383a92328ad6c1d12e97d94730f0ba9a
 		else  :
 			return render(response, 'web/profileNotFound.html')
 	else :
@@ -104,6 +89,7 @@ def editProfile(request,username):
 					form = eP(request.POST, instance=user)
 					if form.is_valid() :
 						form.save()
+
 						return redirect('web-Profile',username=user.username)
 				else :
 					user = User.objects.get(username=request.user.get_username())
@@ -118,7 +104,7 @@ def editProfile(request,username):
 					user = User.objects.get(username=request.user.get_username())
 					form = ePS(instance=user)
 
-			return render(request, 'web/editprofile.html', {"form" : form})
+			return render(request, 'web/editprofile.html', {"form" : form,'user' : usernameindatabase})
 		else :
 			return redirect('web-EditProfile',username=user.username)
 
@@ -166,9 +152,12 @@ def statistikUniv(response) :
 			persenUniv.append(round(jumlah/total*100))
 			persenAtas.append(round(100-(jumlah/total*100)))
 
-		hasil = zip(listUniv,persenUniv,persenAtas)
+		listColor = ["#0f1c26;","#D9F1F1;","#008EA0;","#7FACD6;","#B6E3E9;","#6593F5;","#eee;","#ddd;","#00dae6;","#4F97A3;"]
+		hasilBar = zip(persenUniv,persenAtas,listColor)
+		hasilKeterangan = zip(listUniv,persenUniv,listColor)
+		hasilTable = zip(listUniv,jumlahUniv)
 
-		return render(response, 'web/statistikUniv.html', {"hasil" : hasil,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
+		return render(response, 'web/statistikUniv.html', {"hasilBar" : hasilBar,"hasilKeterangan" : hasilKeterangan, "hasilTable" : hasilTable,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 	else :
 		return redirect('login')
 
@@ -213,9 +202,13 @@ def statistikJalur(response) :
 			persenJalur.append(round(jumlah/total*100))
 			persenAtas.append(round(100-(jumlah/total*100)))
 
-		hasil = zip(listJalur,persenJalur,persenAtas)
+		listColor = ["#0f1c26;","#D9F1F1;","#008EA0;","#7FACD6;","#B6E3E9;","#6593F5;","#eee;","#ddd;","#00dae6;","#4F97A3;"]
 
-		return render(response, 'web/statistikJalur.html', {"hasil" : hasil,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
+		hasilBar = zip(persenJalur,persenAtas,listColor)
+		hasilKeterangan = zip(listJalur,persenJalur,listColor)
+		hasilTable = zip(listJalur,jumlahJalur)
+
+		return render(response, 'web/statistikJalur.html', {"hasilBar" : hasilBar,"hasilKeterangan" : hasilKeterangan, "hasilTable" : hasilTable,'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 	else :
 		return redirect('login')
 
