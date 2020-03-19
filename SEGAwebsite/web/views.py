@@ -28,7 +28,7 @@ def beranda(response):
 		allUser = User.objects.all().order_by('nama')
 		if user.kontak != "-" and user.jurusan != "-" and user.fakultas != "-" and user.univ != "-" and user.jalur != "-"  and user.tahunlulus != "-" and user.tahunmasuk != "-" and user.refrensi != "-" and user.pesan != "-" :
 			if response.method == 'POST' :
-				dataFix = []
+				
 				filtering = User.objects.all().order_by('nama')
 				if response.POST.get('Fakultas') != '*':
 					filtering = User.objects.filter(fakultas__contains=response.POST.get('Nama_F'))
@@ -44,9 +44,13 @@ def beranda(response):
 
 				if response.POST.get("Univ") != "*" :
 					if response.POST.get("Univ") != "PT" :
-						for i in filtering :
-							if i.univ in PerguruanTinggi.objects.filter(status=response.POST.get('Univ')) :
-								dataFix.append(i)
+						dataFix = []
+						dataPT = []
+						for i in PerguruanTinggi.objects.filter(status=response.POST.get('Univ')) :
+							dataPT.append(i.nama)
+						for j in filtering :
+							if j.univ in dataPT :
+								dataFix.append(j)	
 						return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : dataFix})
 					
 					elif response.POST.get('Univ') == 'PT' :
