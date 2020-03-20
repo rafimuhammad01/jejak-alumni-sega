@@ -107,6 +107,7 @@ def editProfile(request,username):
 					user = User.objects.get(username=request.user.get_username())
 					univ = PerguruanTinggi.objects.get(nama=user.univ)
 					form = eP(instance=user, initial = {'univ' : univ.pk})
+				return render(request, 'web/editprofile.html', {"form" : form,'user' : usernameindatabase})
 			else :
 				if request.method == "POST": 
 					form = ePS(request.POST, instance=user)
@@ -117,7 +118,7 @@ def editProfile(request,username):
 					user = User.objects.get(username=request.user.get_username())
 					form = ePS(instance=user)
 
-			return render(request, 'web/editprofile.html', {"form" : form,'user' : usernameindatabase})
+				return render(request, 'web/editprofileSiswa.html', {"form" : form,'user' : usernameindatabase})
 		else :
 			return redirect('web-EditProfile',username=user.username)
 

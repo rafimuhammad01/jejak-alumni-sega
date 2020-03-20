@@ -19,7 +19,7 @@ img {
 
 .cardTeam {
   float: center;
-  width : 80%;
+  width : 425px;
   padding : 5px;
   background-color: #0f1c26;
   border-radius : 10px;
@@ -29,13 +29,13 @@ img {
 
 .col25 {
   float: left;
-  width: 30%;
+  width: 115px;
   padding: 0px 5px;
   height: 145px;
 }
 .col75 {
   float: right;
-  width: 70%;
+  width: 300px;
   padding: 1px;
   height: 100px;
   color : white;
@@ -53,25 +53,25 @@ body {
 .col25 .mobile {
 	display: none;
 }
-@media screen and (min-width: 901px) and (max-width: 1130px) {
+@media screen and (min-width: 651px) and (max-width: 1200px) {
 	body {
-		padding: 10px 80px;
+		padding: 10px 50px;
 		font-size: 12px;
 	}
 	.Team {
-		padding: 0px 300px;
+		padding: 0px 120px;
 	}
 	.cardTeam {
-		width: 100%;
+		width: 400px;
 		height: 130px;
 	}
 	.col25 {
-		height: 100px;
-		width: 35%;
+		height: 115px;
+		width: 100px;
 		padding: 5px;
 	}
 	.col75 {
-		width: 65%;
+		width: 285px;
 		font-size: 10px;
 	}
 	.col25 .desktop {
@@ -80,10 +80,12 @@ body {
 	.col25 .mobile {
 		display: inline;
 	}
+
 }
 
 
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 650px) {
 	body {
 		padding: 10px 20px;
 		font-size: 12px;
@@ -92,15 +94,15 @@ body {
 		padding: 0px 20px;
 	}
 	.cardTeam {
-		width: 100%;
+		width: 300px;
 		height: 120px;
 	}
 	.col25 {
 		height: 100px;
-		width: 35%;
+		width: 85px;
 	}
 	.col75 {
-		width: 65%;
+		width: 200px;
 		font-size: 10px;
 	}
 	.col25 .desktop {
@@ -110,7 +112,5 @@ body {
 		display: inline;
 	}
 
-	.cardTeam {
-	  background-color: red;
-	}
+
 }

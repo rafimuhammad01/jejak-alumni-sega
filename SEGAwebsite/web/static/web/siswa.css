@@ -17,32 +17,31 @@ img {
 
 .profilBlok {
 	width: 100%;
-	height: 150px;
+	height: 200px;
 	padding : 0px;
 	background-color: transparent;
 }
 
 .tulisanBlok {
-	width: 100%;
-	height: 1150px
-	padding : 0px 0px 0px 30px;
-	background-color: transparent;
+	width: 70%;
+	height: 350px;
+	color: white;
+	padding : 20px 0px 20px 30px;
+	background-color: #0f1c26;
+	float: left;
+	border-radius: 15px;
 }
 
 .blokTulisan {
-	padding: 40px 20px 20px 30px;
-	width: 55%;
+	width: 100%;
+	height: 500px;
+	padding : 80px 200px;
 	background-color: transparent;
 	float: left;
-	margin : 0px 0px 0px 385px;
-	height: 1400px;
-	color: #fed337;
-	background-color:  #0f1c26;
-	border-radius: 10px;
 }
 
 .blokSingkat {
-	padding: 40px 20px 20px 30px;
+	padding: 40px 30px 20px 30px;
 	width: 30%;
 	background-color: transparent;
 	float: left;
@@ -58,10 +57,10 @@ img {
 	height: 100%;
 }
 
-.blokTulisan button {
+.tulisanBlok button {
   background-color: #fed337;
-  height: 50px;
-  width: 150px;
+  height: 40px;
+  width: 100px;
   color: #0f1c26;
   font-size : 18px;
   margin: 8px 0;
@@ -73,6 +72,68 @@ img {
 
 .desktopProfil {
 	display: inline;
+}
+
+
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+	img {
+	  height : 200px;
+	  width : 200px;
+	  border-radius : 50%;
+	}
+
+	.namaProfil {
+		font-size: 40px;
+
+	}
+
+	.centerProfil {
+	  display : block;
+	  margin-left : auto;
+	  margin-right : auto;
+	}
+
+	.profilBlok {
+		width: 100%;
+		height: 150px;
+		padding : 0px;
+		background-color: transparent;
+	}
+
+	.blokSingkat {
+		padding: 40px 20px 20px 30px;
+		width: 30%;
+		background-color: transparent;
+		float: left;
+		height: 100%;
+		color: white;
+	}
+
+	.blokPadat {
+		padding: 40px 20px 20px 20px;
+		width: 60%;
+		background-color: transparent;
+		float: left;
+		height: 100%;
+	}
+
+	.blokTulisan button {
+	  background-color: #fed337;
+	  height: 50px;
+	  width: 150px;
+	  color: #0f1c26;
+	  font-size : 18px;
+	  margin: 8px 0;
+	  border: none;
+	  cursor: pointer;
+	  opacity: 0.9;
+	  border-radius:5px;
+	}
+
+	.desktopProfil {
+		display: inline;
+	}
 }
 
 
@@ -101,22 +162,6 @@ img {
 		height: 150px;
 		padding : 0px;
 		background-color: transparent;
-	}
-
-	.tulisanBlok {
-		width: 100%;
-		height: 800px;
-		padding : 0px;
-		background-color: transparent;
-	}
-
-	.blokTulisan {
-		border-radius: 10px;
-		width: 60%;
-		background-color: #0f1c26;
-		float: left;
-		margin : 20px 0px 0px 250px;
-		height: 1000px;
 	}
 
 	.blokSingkat {
@@ -188,22 +233,6 @@ img {
 		background-color: transparent;
 	}
 
-	.tulisanBlok {
-		width: 100%;
-		height: 500px;
-		padding : 0px;
-		background-color: transparent;
-	}
-
-	.blokTulisan {
-		border-radius: 10px;
-		width: 80%;
-		background-color: #0f1c26;
-		float: left;
-		margin : 20px 0px 0px 35px;
-		height: 900px;
-	}
-
 	.blokSingkat {
 		padding: 40px 10px 20px 10px;
 		width: 30%;
@@ -246,9 +275,6 @@ img {
 
 
 @media screen and (max-width: 440px) {
-	.desktopProfil {
-		display: none;
-	}
 
 	img {
 	  height : 100px;
@@ -273,25 +299,6 @@ img {
 		height: 90px;
 		padding : 0px;
 		background-color: transparent;
-	}
-
-	.tulisanBlok {
-		width: 100%;
-		height: 500px;
-		padding : 10px 0px;
-		background-color: transparent;
-	}
-
-	.blokTulisan {
-		border-radius: 10px;
-		padding: 0px 25px 20px 10px;
-		width: 80%;
-		background-color: #0f1c26;
-		float: left;
-		margin : 20px 0px 0px 20px;
-		height: 900px;
-		color: white;
-		font-size: 10px;
 	}
 
 	.blokSingkat {

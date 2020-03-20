@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
- 	<link rel="stylesheet" type="text/css" href="{% static 'web/editProfil.css' %}">
-	<title>Edit Profile</title>
+ 	<link rel="stylesheet" type="text/css" href="{% static 'web/editProfil2.css' %}">
+	<title>Edit Profile Alumni</title>
 </head>
 <body>
 
@@ -24,8 +24,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="tulisanBlok" style="height: 1000px" >
-		<div class="blokTulisan" style="color: #fed337; height: 1300px">
+	<div class="tulisanBlok">
+		<div class="blokTulisan">
 			<form method="post" action="">
 				{% csrf_token %}
 
@@ -68,9 +68,9 @@
 			</form>
 		</div>
 	</div>
-	<div class="desktopProfil">
-		<br><br><br><br><br><br><br><br><br><br><br>
-	</div>
+
+		
 </body>
+<br><br><br><br><br><br><br><br><br><br><br>
 	{% include "footer.html" %}
 </html>

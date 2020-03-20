@@ -1,0 +1,430 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<style>
+ 		img {
+		  height : 200px;
+		  width : 200px;
+		  border-radius : 50%;
+		}
+
+		.namaProfil {
+			font-size: 40px;
+
+		}
+
+		.centerProfil {
+		  display : block;
+		  margin-left : auto;
+		  margin-right : auto;
+		}
+
+		.profilBlok {
+			width: 100%;
+			height: 200px;
+			padding : 0px;
+			background-color: transparent;
+		}
+
+		.tulisanBlok {
+			width: 100%;
+			height: 350px;
+			color: #0f1c26;
+			padding : 20px 0px 20px 30px;
+			background-color: transparent;
+			float: left;
+			border-radius: 15px;
+		}
+
+		.blokTulisan {
+			width: 100%;
+			height: 500px;
+			padding : 80px 100px;
+			background-color: transparent;
+			float: left;
+		}
+
+		.blokSingkat {
+			padding: 40px 30px 20px 30px;
+			width: 30%;
+			background-color: transparent;
+			float: left;
+			height: 100%;
+			color: white;
+		}
+
+		.blokPadat {
+			padding: 40px 20px 20px 20px;
+			width: 60%;
+			background-color: transparent;
+			float: left;
+			height: 100%;
+		}
+
+		.tulisanBlok button {
+		  background-color: #0f1c26;
+		  height: 40px;
+		  width: 100px;
+		  color: white;
+		  font-size : 18px;
+		  margin: 8px 0;
+		  border: none;
+		  cursor: pointer;
+		  border-radius:5px;
+		}
+
+		.desktopProfil {
+			display: inline;
+		}
+
+
+
+		@media screen and (min-width: 1201px) and (max-width: 1400px) {
+			img {
+			  height : 200px;
+			  width : 200px;
+			  border-radius : 50%;
+			}
+
+			.namaProfil {
+				font-size: 40px;
+
+			}
+
+			.centerProfil {
+			  display : block;
+			  margin-left : auto;
+			  margin-right : auto;
+			}
+
+			.profilBlok {
+				width: 100%;
+				height: 150px;
+				padding : 0px;
+				background-color: transparent;
+			}
+
+			.blokSingkat {
+				padding: 40px 20px 20px 30px;
+				width: 30%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+				color: white;
+			}
+
+			.blokPadat {
+				padding: 40px 20px 20px 20px;
+				width: 60%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+			}
+
+			.blokTulisan button {
+			  background-color: #0f1c26;
+			  height: 50px;
+			  width: 150px;
+			  color: white;
+			  font-size : 18px;
+			  margin: 8px 0;
+			  border: none;
+			  cursor: pointer;
+			  opacity: 0.9;
+			  border-radius:5px;
+			}
+
+			.desktopProfil {
+				display: inline;
+			}
+		}
+
+
+		@media screen and (min-width: 900px) and (max-width: 1200px) {
+
+			img {
+			  height : 180px;
+			  width : 180px;
+			  border-radius : 50%;
+			}
+
+			.namaProfil {
+				padding: 20px 0px 0px 0px;
+				font-size: 35px;
+
+			}
+
+			.centerProfil {
+			  display : block;
+			  margin-left : auto;
+			  margin-right : auto;
+			}
+
+			.profilBlok {
+				width: 100%;
+				height: 150px;
+				padding : 0px;
+				background-color: transparent;
+			}
+
+			.blokSingkat {
+				padding: 40px 10px 20px 10px;
+				width: 30%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+				color: white;
+			}
+
+			.blokPadat .desktop {
+				display: none;
+			}
+
+			.blokPadat .mobile {
+				display: inline;
+			}
+
+			.blokPadat {
+				padding: 40px 0px 20px 0px;
+				width: 60%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+			}
+
+			.blokTulisan button {
+			  background-color: #0f1c26;
+			  height: 40px;
+			  width: 90px;
+			  color: white;
+			  font-size : 18px;
+			  margin: 8px 0;
+			  border: none;
+			  cursor: pointer;
+			  border-radius:5px;
+			}
+		}
+
+
+		@media screen and (min-width: 441px) and (max-width: 899px) {
+			.desktopProfil {
+				display: none;
+			}
+
+			.blokTulisan {
+				width: 100%;
+				height: 500px;
+				padding : 50px 40px;
+				background-color: transparent;
+				float: left;
+			}
+
+			.tulisanBlok {
+				width: 100%;
+				height: 350px;
+				color: #0f1c26;
+				padding : 20px 0px 20px 10px;
+				background-color: transparent;
+				float: left;
+				border-radius: 15px;
+			}
+
+			img {
+			  height : 150px;
+			  width : 150px;
+			  border-radius : 50%;
+			}
+
+			.namaProfil {
+				padding: 20px 0px 0px 0px;
+				font-size: 27px;
+
+			}
+
+			.centerProfil {
+			  display : block;
+			  margin-left : auto;
+			  margin-right : auto;
+			}
+
+			.profilBlok {
+				width: 100%;
+				height: 150px;
+				padding : 0px;
+				background-color: transparent;
+			}
+
+			.blokSingkat {
+				padding: 40px 10px 20px 10px;
+				width: 30%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+				color: white;
+			}
+
+			.blokPadat .desktop {
+				display: none;
+			}
+
+			.blokPadat .mobile {
+				display: inline;
+			}
+
+			.blokPadat {
+				padding: 40px 0px 20px 0px;
+				width: 60%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+			}
+
+			.blokTulisan button {
+			  background-color: #0f1c26;
+			  height: 30px;
+			  width: 80px;
+			  color: white;
+			  font-size : 14px;
+			  margin: 8px 0;
+			  border: none;
+			  cursor: pointer;
+			  opacity: 0.9;
+			  border-radius:5px;
+			}
+		}
+
+
+
+		@media screen and (max-width: 440px) {
+
+			img {
+			  height : 100px;
+			  width : 100px;
+			  border-radius : 50%;
+			}
+
+			.namaProfil {
+				padding: 20px 0px 0px 0px;
+				font-size: 20px;
+
+			}
+
+			.tulisanBlok {
+				width: 100%;
+				height: 350px;
+				color: #0f1c26;
+				padding : 20px 0px 20px 0px;
+				background-color: transparent;
+				float: left;
+				border-radius: 15px;
+			}
+
+			.blokTulisan {
+				width: 100%;
+				height: 500px;
+				padding : 40px 0px;
+				background-color: transparent;
+				float: left;
+			}
+
+			.centerProfil {
+			  display : block;
+			  margin-left : auto;
+			  margin-right : auto;
+			}
+
+			.profilBlok {
+				width: 100%;
+				height: 90px;
+				padding : 0px;
+				background-color: transparent;
+			}
+
+			.blokSingkat {
+				padding: 40px 10px 20px 10px;
+				width: 30%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+				color: white;
+			}
+
+			.blokPadat .desktop {
+				display: none;
+			}
+
+			.blokPadat .mobile {
+				display: inline;
+			}
+
+			.blokPadat {
+				padding: 40px 0px 20px 0px;
+				width: 60%;
+				background-color: transparent;
+				float: left;
+				height: 100%;
+			}
+
+			.blokTulisan button {
+			  background-color: #0f1c26;
+			  height: 30px;
+			  width: 80px;
+			  color: white;
+			  font-size : 14px;
+			  margin: 8px 0;
+			  border: none;
+			  cursor: pointer;
+			  opacity: 0.9;
+			  border-radius:5px;
+			}
+		}
+
+
+
+
+ 	</style>
+	<title>Edit Profile Alumni</title>
+</head>
+<body>
+
+	{% include "Navbar.html" %}
+	
+	<div class="profilBlok">
+		<div class="blokSingkat">
+			<img src="{{user.image.url}}" class="centerProfil">
+		</div>
+		<div class="blokPadat">
+			<h1 class="namaProfil">{{user.nama}}</h1>
+			<div class="desktop">
+				<br>
+				<hr color=9f1717 size="7">
+			</div>
+			<div class="mobile">
+				<hr color=9f1717 size="4">
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="blokTulisan">
+		<div class="tulisanBlok">
+			<form method="post" action="">
+				{% csrf_token %}
+
+				<h3>Ganti status kamu dengan mengubah status di form ini yaa!</h3>
+				<h4>Kontak</h4>
+				<p>{{ form.kontak }}</p>
+
+				<h4>Status</h4>
+				{{ form.status }}				
+				<button type="submit", name="save">Simpan</button>
+			</form>
+		</div>	
+	</div>
+	
+
+		
+</body>
+
+	{% include "footer.html" %}
+</html>
