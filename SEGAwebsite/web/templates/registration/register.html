@@ -1,18 +1,54 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 <!DOCTYPE html>
 <html>
+{% block content %}
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'web/login2.css' %}">
 </head>
 <body>
-	{% block content %}
-	<form method="POST">
-		{% csrf_token %}
-		{{form|crispy}}
-		<button type="submit", class="btn btn-primary" >Register</button>
-	</form>
-	{% endblock content %}
+	<div class="kotakLogin">
+		<div class="formLain">
+			<h1>Halo, Sega!</h1>
+			<p>Silahkan register dengan format username:</p>
+			<p><strong>namaAwal.namaKeduaTanggalLahir</strong></p>
+			<p>Contoh : Ahmad Fauzan Ridwan</p>
+			<p>Lahir : 10 Januari 2001</p>
+			<p>Register dengan username : Ahmad.Fauzan10</p>
+			<br>
+			<hr color=fed337>
+			<h1>Sudah melakukan registrasi?</h1>
+			<p>Silahkan Login!</p>
+			<br>
+			<div class="small">
+				<p><a href="/login" class="btn btn-outline-warning btn-sm" role="button">Login</a></p>	
+			</div>
+			<div class="medium">
+				<p><a href="/login" class="btn btn-outline-warning btn-md" role="button">Login</a></p>	
+			</div>
+			<div class="large">
+				<p><a href="/login" class="btn btn-outline-warning btn-lg" role="button">Login</a></p>	
+			</div>
+			
+		</div>
+		<div class="kotakForm">
+			<form method="POST">
+				{% csrf_token %}
+				{{form|crispy}}
+				<br>
+				<div class="small">
+					<button type="submit", class="btn btn-outline-danger btn-sm" >Register</button>
+				</div>
+				<div class="medium">
+					<button type="submit", class="btn btn-outline-danger btn-md" >Register</button>	
+				</div>
+				<div class="large">
+					<button type="submit", class="btn btn-outline-danger btn-lg" >Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
+{% endblock content %}
 </html>

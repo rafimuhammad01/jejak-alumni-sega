@@ -1,19 +1,46 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 <!DOCTYPE html>
 <html>
+{% block content %}
 <head>
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'web/login1.css' %}">
 </head>
 <body>
-	{% block content %}
-	<form method="POST">
-		{% csrf_token %}
-		{{form|crispy}}
-		<p>Create Account<a href="/register"> Register Here </a></p>
-		<button type="submit", class="btn btn-primary" >login</button>
-	</form>
-	{% endblock content %}
+	<div class="kotakLogin">
+		<div class="formLain">
+			<h1>Halo, Sega!</h1>
+			<p>Silahkan login jika kamu sudah memiliki akun. Kamu juga diharapkan menuju ke halaman register akun jika kamu belum melakukan registrasi akun.</p>
+			<br>
+			<div class="small">
+				<p><a href="/register" class="btn btn-outline-warning btn-sm" role="button">Register</a></p>
+			</div>
+			<div class="medium">
+				<p><a href="/register" class="btn btn-outline-warning btn-md" role="button">Register</a></p>
+			</div>
+			<div class="large">
+				<p><a href="/register" class="btn btn-outline-warning btn-lg" role="button">Register</a></p>
+			</div>
+		</div>
+		<div class="kotakForm">
+			<form method="POST">
+				{% csrf_token %}
+				{{form|crispy}}
+				<br>
+				<div class="small">
+					<button type="submit", class="btn btn-outline-danger btn-sm" >login</button>
+				</div>
+				<div class="medium">
+					<button type="submit", class="btn btn-outline-danger btn-md" >login</button>
+				</div>
+				<div class="large">
+					<button type="submit", class="btn btn-outline-danger btn-lg" >login</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 </body>
+{% endblock content %}
 </html>
