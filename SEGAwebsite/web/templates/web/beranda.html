@@ -28,6 +28,7 @@
 
           <form method="POST", action="" enctype = "multipart/form-data">
             <form padding="20px">
+              {% csrf_token %}
               <p> <strong>Perguruan Tinggi:</strong> </p>
               <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
               <input type="radio"  name="Univ" value="Negeri" > Perguruan Tinggi Negeri <br>
