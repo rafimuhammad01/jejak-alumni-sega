@@ -2,53 +2,68 @@
 {% load crispy_forms_tags %}
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% block content %}
 <head>
-	<link rel="stylesheet" type="text/css" href="{% static 'web/login2.css' %}">
+	    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'web/register.css' %}">
+    <title>Register</title>
 </head>
 <body>
-	<div class="kotakLogin">
-		<div class="formLain">
-			<h1>Halo, Sega!</h1>
-			<p>Silahkan register dengan format username:</p>
-			<p><strong>namaAwal.namaKeduaTanggalLahir</strong></p>
-			<p>Contoh : Ahmad Fauzan Ridwan</p>
-			<p>Lahir : 10 Januari 2001</p>
-			<p>Register dengan username : Ahmad.Fauzan10</p>
-			<br>
-			<hr color=fed337>
-			<h1>Sudah melakukan registrasi?</h1>
-			<p>Silahkan Login!</p>
-			<br>
-			<div class="small">
-				<p><a href="/login" class="btn btn-outline-warning btn-sm" role="button">Login</a></p>	
-			</div>
-			<div class="medium">
-				<p><a href="/login" class="btn btn-outline-warning btn-md" role="button">Login</a></p>	
-			</div>
-			<div class="large">
-				<p><a href="/login" class="btn btn-outline-warning btn-lg" role="button">Login</a></p>	
-			</div>
-			
-		</div>
-		<div class="kotakForm">
-			<form method="POST">
-				{% csrf_token %}
-				{{form|crispy}}
-				<br>
-				<div class="small">
-					<button type="submit", class="btn btn-outline-danger btn-sm" >Register</button>
-				</div>
-				<div class="medium">
-					<button type="submit", class="btn btn-outline-danger btn-md" >Register</button>	
-				</div>
-				<div class="large">
-					<button type="submit", class="btn btn-outline-danger btn-lg" >Register</button>
-				</div>
-			</form>
-		</div>
-	</div>
+	    <!-- Akhir navbar -->
+    <section class="register" id="register">
+      <div class="container" style="padding-top: 100px; padding-bottom: 100px;">
+        <div class="row">
+            <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-sm-6 offset-sm-0 col-10 offset-1 radKiri" style="color: white;padding: 50px 20px;background-color: #0f1c26; box-shadow: 0px 5px 5px 0px black;">
+              <h1>Halo, Sega!</h1>
+              <p>Silahkan register dengan format username:</p>
+              <p><strong>namaAwal.namaKeduaTanggalLahir</strong></p>
+              <p>Contoh : Ahmad Fauzan Ridwan || Lahir : 10 Januari 2001</p>
+              <p>Register dengan username : Ahmad.Fauzan10</p>
+              
+              <hr color=fed337>
+              <h1>Sudah melakukan registrasi?</h1>
+              <p>Silahkan Login!</p>
+              
+              <div class="small">
+                <p><a href="/login" class="btn btn-outline-warning btn-sm" role="button">Login</a></p>  
+              </div>
+              <div class="medium">
+                <p><a href="/login" class="btn btn-outline-warning btn-md" role="button">Login</a></p>  
+              </div>
+              <div class="large">
+                <p><a href="/login" class="btn btn-outline-warning btn-lg" role="button">Login</a></p>  
+              </div>
+              
+            </div>
+            <div class="col-xl-4 offset-xl-0 col-lg-4 offset-lg-0 col-md-5 offset-md-0 col-sm-6 offset-sm-0 col-10 offset-1 radKanan" style="background-color: white; padding: 50px 20px;box-shadow: 0px 5px 5px 0px black;color: black;">
+              <form method="POST">
+                {% csrf_token %}
+                {{form|crispy}}
+                <div class="small">
+                  <button type="submit", class="btn btn-outline-danger btn-sm" >Register</button>
+                </div>
+                <div class="medium">
+                  <button type="submit", class="btn btn-outline-danger btn-md" >Register</button> 
+                </div>
+                <div class="large">
+                  <button type="submit", class="btn btn-outline-danger btn-lg" >Register</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+     </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 {% endblock content %}
 </html>

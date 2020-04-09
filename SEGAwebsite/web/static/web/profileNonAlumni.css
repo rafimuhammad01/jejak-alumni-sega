@@ -1,0 +1,21 @@
+@media screen and (max-width: 575px) {
+
+	.noCard h1 {
+		font-size: 25px;
+	}
+
+	.noCard p {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+	.noCard h1 {
+		font-size: 33px;
+	}
+
+	.noCard p {
+		font-size: 16px;
+	}
+}

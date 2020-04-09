@@ -1,0 +1,162 @@
+html {
+	position: relative;
+}
+
+
+.register section {
+	min-height: 600px;
+	background-color: transparent;
+}
+
+.container {
+	background-color: transparent;
+}
+
+.register {
+	min-height: 800px;
+	font-size: 16px;	
+}
+
+.register .col-4 {
+	color: white;
+	padding: 50px 20px;
+}
+
+/* Border Radius tiap kotak dalam kondisi kanan kiri */
+.register .radKiri {
+	border-radius: 25px 0px 0px 25px;
+}
+
+.register .radKanan {
+	border-radius: 0px 25px 25px 0px;
+}
+/* Batas Border Radius tiap kotak dalam kondisi kanan kiri */
+
+/* Button login dan register */
+.large {
+	display: inline;
+}
+
+.small {
+	display: none;
+}
+
+.medium {
+	display: none;
+}
+/* Batas Button login dan register */
+
+.register p { 
+	word-break: normal;
+}
+
+.register h3 {
+	color: #0f1c26;
+	font-size: 20px;
+}
+
+
+@media screen and (max-width: 575px) {
+	
+	.register p { 
+		word-break: break-all 
+	}
+	/* Button login dan register */
+	.large {
+		display: none;
+	}
+
+	.small {
+		display: inline;
+	}
+
+	.medium {
+		display: none;
+	}
+	/* Batas Button login dan register */
+
+	/* Border Radius tiap kotak dalam kondisi kanan kiri */
+	.register .radKiri {
+		border-radius: 25px 25px 0px 0px;
+	}
+
+	.register .radKanan {
+		border-radius: 0px 0px 25px 25px ;
+	}
+	/* Batas Border Radius tiap kotak dalam kondisi kanan kiri */
+
+	.register h1 {
+		font-size: 22px;
+	}		
+
+	.register p {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+	.register h1 {
+		font-size: 27px;
+	}		
+
+	.register p {
+		font-size: 13px;
+	}
+	/* Button login dan register */
+	.large {
+		display: none;
+	}
+
+	.small {
+		display: none;
+	}
+
+	.medium {
+		display: inline;
+	}
+	/* Batas Button login dan register */
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+	.register h1 {
+		font-size: 29px;
+	}		
+
+	.register p {
+		font-size: 14px;
+	}
+	/* Button login dan register */
+	.large {
+		display: none;
+	}
+
+	.small {
+		display: none;
+	}
+
+	.medium {
+		display: inline;
+	}
+	/* Batas Button login dan register */
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+	.register p { 
+		word-break: normal;
+	}
+	.register h1 {
+		font-size: 31px;
+	}		
+
+	.register p {
+		font-size: 14px;
+	}
+
+}
+
+
+
+

@@ -1,0 +1,78 @@
+.editSiswa img {
+	height : 150px;
+	width : 150px;
+	border-radius : 50%;
+	display : block;
+	margin-left : auto;
+	margin-right : auto;
+}
+
+.editSiswa input[type=text] {
+	background-color: #eee;
+	border-radius: 10px;
+	padding: 5px 10px;
+	width: 100%;
+	font-family: Century Gothic;
+}
+
+.editSiswa input {
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Century Gothic;
+}
+
+@media screen and (max-width: 575px){
+	.editSiswa img {
+	  height : 70px;
+	  width : 70px;
+	 }
+	 .editSiswa p {
+	 	font-size: 12px;
+	 }
+
+	 .editSiswa h3 {
+	 	font-size: 17px
+	 }
+
+	 .editSiswa h1 {
+	 	font-size: 20px
+	 }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px){
+	.editSiswa img {
+	  height : 100px;
+	  width : 100px;
+	 }
+
+	 .editSiswa p {
+	 	font-size: 15px;
+	 }
+
+	 .editSiswa h3 {
+	 	font-size: 20px
+	 }
+
+	 .editSiswa h1 {
+	 	font-size: 27px
+	 }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+	.editSiswa img {
+	  height : 100px;
+	  width : 100px;
+	 }
+
+	 .editSiswa h1 {
+	 	font-size: 34px
+	 }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+	.editSiswa img {
+	  height : 130px;
+	  width : 130px;
+	 }
+}

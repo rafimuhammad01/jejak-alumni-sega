@@ -1,0 +1,48 @@
+html {
+	position: relative;
+}
+
+p {
+	word-break: normal;
+}
+
+.container {
+	background-color: transparent;
+}
+
+section {
+	min-height: 600px;
+	background-color: transparent;
+}
+
+.about img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+@media screen and (max-width: 576px) {
+	.about h2 {
+		font-size: 18px;
+	}
+	.about p {
+		font-size: 12px;
+	}
+
+	.about img {
+		width: 30px;
+		height: 30px;
+	}
+
+	.about .fa-linkedin-square {
+		font-size:12px;
+	}
+
+	.about span {
+		font-size:12px;
+	}
+}
+
+
+
+

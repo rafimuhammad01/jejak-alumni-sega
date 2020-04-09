@@ -1,0 +1,429 @@
+html {
+  position: relative;
+}
+
+
+/* Modal */
+      /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 30px;
+  top: 30px;
+  width: 40%; /* Full width */
+  height: 60%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding: 50px;
+  color : white;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.Pad{
+  padding : 14px 20px
+}
+
+.modalBeranda .desktop {
+  display: inline;
+}
+
+.modalBeranda .mobile {
+  display: none;
+}
+
+/* Full-width input fields */
+.modalBeranda input[type=text], .modalBeranda input[type=password] {
+  width: 100%;
+  padding: 0px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+.modalBeranda input[type=text]:focus, .modalBeranda input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Batas Modal */
+
+section {
+  min-height: 0px;
+  background-color: transparent;
+}
+
+
+.portfolio {
+
+  padding-bottom: 100px;
+}
+
+
+.card {
+  background-color : #0f1c26;
+  border-radius: 35px;
+  margin-top: 20px;
+  height : 320px;
+  padding: 35px 15px;
+  box-shadow : 0px 5px 5px 0px black;
+}
+
+.jalur {
+  font-size: 15px;
+  font-family: Arial Black;
+  color : white;
+  text-align: center;
+  padding: 0px;
+}
+
+.nama {
+  font-size : 18px;
+  text-align : center;
+  color : white;
+}
+
+.jurusanUniv {
+  font-size : 15px;
+  text-align : center;
+  color : white;
+}
+
+.card img {
+  height : 80px;
+  width : 80px;
+  border-radius : 50%;
+  display : block;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+
+
+.container {
+  background-color: transparent;
+}
+
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: inline;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .card {
+    width : 215px;
+    height : 385px;
+    padding: 35px 5px;
+  }
+}
+
+@media screen and (max-width: 369px) {
+  .modal {
+    padding: 25px 5px 15px 5px;
+    font-size: 12px;
+    width: 60%;
+  }
+
+  .modalBeranda h1 {
+    font-size: 17px;
+  }
+
+  .close {
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+  }
+  
+  .portfolio {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px
+  }
+  .card {
+    width: 135px;
+    height: 305px;
+    padding: 20px 0px;
+    border-radius: 25px;
+  }
+
+  .card-body {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .card img {
+    height : 50px;
+    width : 50px;
+  }
+
+  .jalur {
+    font-size: 12px;
+  }
+
+  .nama {
+    font-size : 14px;
+  }
+
+  .jurusanUniv {
+    font-size : 12px;
+  }
+  .modalBeranda .desktop {
+    display: none;
+  }
+
+  .modalBeranda .mobile {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 465px) {
+
+  .portfolio {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+  }
+  .card {
+    width: 150px;
+    height: 325px;
+    padding: 25px 0px;
+  }
+
+  .card img {
+    height : 55px;
+    width : 55px;
+  }
+
+  .jalur {
+    font-size: 12px;
+  }
+
+  .nama {
+    font-size : 14px;
+  }
+
+  .jurusanUniv {
+    font-size : 12px;
+  }
+  .modalBeranda .desktop {
+    display: none;
+  }
+
+  .modalBeranda .mobile {
+    display: inline;
+  }
+
+  .modal {
+    padding: 15px 5px;
+    font-size: 12px;
+    width: 50%;
+  }
+
+  .modalBeranda h1 {
+    font-size: 17px;
+  }
+
+  .close {
+    right: 15px;
+    top: 10px;
+    font-size: 25px;
+  }
+}
+
+
+@media screen and (min-width: 466px) and (max-width: 575px) {
+  .portfolio {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .card {
+    height: 370px;
+    padding: 25px 0px;
+    width: 185px;
+  }
+  .modalBeranda .desktop {
+    display: none;
+  }
+
+  .modalBeranda .mobile {
+    display: inline;
+  }
+
+  .modal {
+    padding: 25px 5px;
+    font-size: 12px;
+    width: 50%;
+  }
+
+  .modalBeranda h1 {
+    font-size: 17px;
+  }
+
+  .close {
+    right: 15px;
+    top: 10px;
+    font-size: 25px;
+  }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .card {
+    width : 165px;
+    height: 320px;
+    padding: 25px 0px;
+  }
+
+  .card img {
+    height : 60px;
+    width : 60px;
+  }
+
+  .jalur {
+    font-size: 12px;
+  }
+
+  .nama {
+    font-size : 14px;
+  }
+
+  .jurusanUniv {
+    font-size : 12px;
+  }
+
+  .modalBeranda .desktop {
+      display: none;
+    }
+
+  .modalBeranda .mobile {
+    display: inline;
+  }
+
+  .modal {
+    padding: 25px 5px;
+    font-size: 12px;
+    width: 50%;
+  }
+
+  .modalBeranda h1 {
+    font-size: 17px;
+  }
+
+  .close {
+    right: 15px;
+    top: 10px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .card {
+    height : 350px;
+    padding: 25px 5px;
+    width: 185px;
+  }
+
+  .card img {
+    height : 65px;
+    width : 65px;
+  }
+
+  .jalur {
+    font-size: 14px;
+  }
+
+  .nama {
+    font-size : 16px;
+  }
+
+  .jurusanUniv {
+    font-size : 14px;
+  }
+
+  .modalBeranda .desktop {
+      display: none;
+    }
+
+  .modalBeranda .mobile {
+    display: inline;
+  }
+
+  .modal {
+    padding: 25px 5px;
+    font-size: 12px;
+    width: 50%;
+  }
+
+  .modalBeranda h1 {
+    font-size: 17px;
+  }
+
+  .close {
+    right: 15px;
+    top: 10px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .card {
+    height : 365px;
+    padding: 35px 5px;
+    width: 185px;
+  }
+
+  .card img {
+    height : 75px;
+    width : 75px;
+  }
+
+  .jalur {
+    font-size: 14px;
+  }
+
+  .nama {
+    font-size : 16px;
+  }
+
+  .jurusanUniv {
+    font-size : 14px;
+  }
+}

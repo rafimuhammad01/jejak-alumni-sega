@@ -2,17 +2,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{% static 'web/profileSiswaGap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'web/profileNonAlumni.css' %}">
+	<title>Profil Saya</title>
 </head>
 <body>
 	{% include "Navbar.html" %}
-	<div class="kotakEdit">
-		<h1>Halo, {{user.nama}}!</h1>
-		<hr color=0f1c26>
-		<p>Kartu profil hanya dimiliki oleh alumni yang berstatus sebagai mahasiswa. Edit profil kamu jika kamu ingin mengganti statusmu.</p>
-		<a href="/profile/edit/{{user.username}}">Edit Profil</a>	
-	</div>
-	
+
+	<section class="noCard" style="margin-top: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-10 offset-1">
+					<h1>Halo, {{user.nama}}!</h1>
+					<hr color=0f1c26>
+					<p>Kartu profil hanya dimiliki oleh alumni yang berstatus sebagai mahasiswa. Edit profil kamu jika kamu ingin mengganti statusmu.</p>
+					<a href="/profile/edit/{{user.username}}">Edit Profil</a>	
+				</div>
+			</div>
+		</div>
+	</section>
 	
 </body>
 {% include "footer.html" %}

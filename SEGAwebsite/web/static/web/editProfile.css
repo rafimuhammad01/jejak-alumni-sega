@@ -1,0 +1,102 @@
+html {
+	position: relative;
+}
+
+.container {
+	background-color: transparent;
+}
+
+section {
+	min-height: 600px;
+	background-color: transparent;
+}
+
+.contact {
+	min-height: 800px;
+	font-size: 16px;
+}
+
+.contact img {
+	width: 200px;
+	height: 200px;
+	border: 5px solid #0f1c26;
+	border-radius: 50%;
+	display : block;
+	margin-left : auto;
+	margin-right : auto;
+ }
+
+.contact input {
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Century Gothic;
+}
+
+.contact textarea {
+  border: 1px solid transparent;
+  font-size: 16px;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-family: Century Gothic;
+}
+
+.contact input[type=text] {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 100%;
+  font-family: Century Gothic;
+  
+}
+
+.contact select {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border : 0px;
+}
+
+.contact h3 {
+	color: #0f1c26;
+	font-size: 22px;
+}
+
+@media screen and (max-width: 576px) {
+	.contact img {
+		height: 100px;
+		width: 100px;
+	}
+
+	.contact h1 {
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.contact {
+		font-size: 14px;
+	}
+	
+	.contact img {
+		height: 150px;
+		width: 150px;
+	}
+
+	.contact h1 {
+		font-size: 30px;
+	}
+
+	.contact h3 {
+		font-size: 18px;
+	}
+
+	.contact h2 {
+		font-size: 22px;
+	}
+}
+

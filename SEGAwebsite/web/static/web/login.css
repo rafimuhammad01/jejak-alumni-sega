@@ -1,40 +1,102 @@
-body {
-	background-image: url("/static/bg.png");
-	padding: 100px 200px;
+html {
+	position: relative;
 }
 
-.kotakLogin {
-	background-color: #9f1717;
-	float: left;
-	width: 100%;
-	box-shadow: 0px 5px 5px 0px black;
-	border-radius: 25px;
-}
 
-.kotakForm {
-	background-color: white;
-	width: 50%;
-	padding: 100px 40px;
-	float: left;
-	height: 100%;
-	color: black;
-	font-size: 18px;
-}
-
-.formLain {
+.login section {
+	min-height: 600px;
 	background-color: transparent;
-	width: 50%;
-	float: left;
-	padding: 80px 60px;
-	height: 100%;
+}
+
+.login .container {
+	background-color: transparent;
+}
+
+.login {
+	min-height: 800px;
+	font-size: 16px;	
+}
+
+.login .col-4 {
 	color: white;
-	text-align: center;
+	padding: 50px 20px;
 }
 
-.formLain h1 {
-	font-size: 50px;
+
+.login h3 {
+	color: #0f1c26;
+	font-size: 20px;
 }
 
-.formLain p {
-	font-size: 15px;
+/* Login dan Register Button */
+.large {
+	display: inline;
+}
+
+.small {
+	display: none;
+}
+
+.medium {
+	display: none;
+}
+
+/* Batas Login dan Register Button */
+
+
+
+@media screen and (max-width: 575px) {
+
+	/* Login dan Register Button */
+	.login h1 {
+		font-size: 22px;
+	}
+
+	.login p {
+		font-size: 12px;
+	}
+	.large {
+		display: none;
+	}
+
+	.small {
+		display: inline;
+	}
+
+	.medium {
+		display: none;
+	}
+	/* Batas Login dan Register Button */
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	/* Login dan Register Button */
+	.large {
+		display: none;
+	}
+
+	.small {
+		display: none;
+	}
+
+	.medium {
+		display: inline;
+	}
+	/* Batas Login dan Register Button */
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	/* Login dan Register Button */
+	.large {
+		display: none;
+	}
+
+	.small {
+		display: none;
+	}
+
+	.medium {
+		display: inline;
+	}
+	/* Batas Login dan Register Button */
 }

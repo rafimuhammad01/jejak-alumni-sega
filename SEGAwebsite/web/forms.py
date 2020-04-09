@@ -14,6 +14,7 @@ class UserRegistrationForm(UserCreationForm):
 
 class editProfile(forms.ModelForm):
 	status = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('alumni','Alumni'),('siswa','Siswa'),('gapyear/kerja', 'Gap Year/Kerja')))
+	jalur = forms.ChoiceField(required=True, widget=forms.RadioSelect(attrs={'class': 'Radio'}), choices=(('SNMPTN','SNMPTN'),('SBMPTN','SBMPTN'),('Mandiri', 'Mandiri'),('Lainnya', 'Lainnya')))
 	univ = forms.ModelChoiceField(queryset=PerguruanTinggi.objects.all().order_by("nama"))
 	class Meta :
 		model = myUser
@@ -32,7 +33,7 @@ class editProfile(forms.ModelForm):
 			'status'
 			]
 		widgets = {
-			'pesan': Textarea(attrs={'cols':35}),'refrensi': Textarea(attrs={'cols':35}),
+			'pesan': Textarea(attrs={'cols':35}),'refrensi': Textarea(attrs={'cols':35}), 'univ' : forms.Select(attrs={'size' : '10px'})
 		}
 
 	def clean_jurusan(self):

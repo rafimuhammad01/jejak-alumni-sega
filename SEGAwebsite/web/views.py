@@ -61,7 +61,7 @@ def beranda(response):
 			else :
 				return render(response, 'web/beranda.html',{'nama' : user.nama, 'username' : user.username, 'nis' : user.nis, 'data' : allUser})
 		else :
-			messages.info(response, 'Silahkan Lengkapi Profile Anda')
+			#messages.info(response, 'Silahkan Lengkapi Profile Anda')
 			return redirect('web-EditProfile', username=user.username)
 	else :
 		return redirect('login')
@@ -93,13 +93,22 @@ def profile(response, username) :
 
 def editProfile(request,username):
 	if request.user.is_authenticated:
+		allUniv = PerguruanTinggi.objects.all().order_by("nama")
+		listUniv = []
+		listUniv.extend(allUniv)
+		lisLen = len(listUniv)-1
+
 		user = User.objects.get(username=request.user.get_username())
 		usernameindatabase = User.objects.filter(username=username).first()
 		if usernameindatabase != None and user.username == usernameindatabase.username :
 			if usernameindatabase.status == 'alumni':
 				if request.method == "POST": 
 					form = eP(request.POST, instance=user)
+					#form.univ = request.POST.get('univ')
 					if form.is_valid() :
+						#usernameindatabase = User.objects.get(username=form.cleaned_data['username'])
+						
+						#usernameindatabase.save()
 						form.save()
 
 						return redirect('web-Profile',username=user.username)
@@ -107,7 +116,7 @@ def editProfile(request,username):
 					user = User.objects.get(username=request.user.get_username())
 					univ = PerguruanTinggi.objects.get(nama=user.univ)
 					form = eP(instance=user, initial = {'univ' : univ.pk})
-				return render(request, 'web/editprofile.html', {"form" : form,'user' : usernameindatabase})
+				return render(request, 'web/editprofile.html', {"form" : form,'user' : usernameindatabase,'univ' : listUniv,'listLen' : lisLen})
 			else :
 				if request.method == "POST": 
 					form = ePS(request.POST, instance=user)
@@ -118,7 +127,7 @@ def editProfile(request,username):
 					user = User.objects.get(username=request.user.get_username())
 					form = ePS(instance=user)
 
-				return render(request, 'web/editprofileSiswa.html', {"form" : form,'user' : usernameindatabase})
+				return render(request, 'web/editprofileSiswa.html', {"form" : form,'user' : usernameindatabase,'univ': listUniv,'listLen' : lisLen})
 		else :
 			return redirect('web-EditProfile',username=user.username)
 

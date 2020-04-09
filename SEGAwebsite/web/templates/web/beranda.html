@@ -1,98 +1,145 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+{% include 'Navbar.html' %}
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'web/beranda1.css' %}">
-  <script type="text/javascript" src="{% static 'web/berandaModal.js' %}"></script>
-
+    <link rel="stylesheet" type="text/css" href="{% static 'web/BerandaSega.css' %}">
+    <title>Beranda</title>
 </head>
 <body>
-  {% include "Navbar.html" %}
-
-<br>
-<div class="rows">
-
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="Pad" ><strong>Filter Pencarian</strong></button>
-  <br>
-  <br>
 
 
-  <div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <form method="POST" netlify, action="" enctype = "multipart/form-data">
-        <div class="container">
-            <h1>Filter Pencarian</h1>
-            <p>Atur pencarian sesuai dengan kebutuhanmu.</p>
-            <hr color=yellow>
+<section class="modalBeranda" style="margin-top: 70px;">
+  <div class="container">
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;background-color: #9f1717;" type="button" class="btn btn-primary btn-md"><strong>Filter Pencarian</strong></button>
+    <br>
+    <br>
 
 
-          <form method="POST", action="" enctype = "multipart/form-data">
-            <form padding="20px">
-              {% csrf_token %}
-              <p> <strong>Perguruan Tinggi:</strong> </p>
-              <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
-              <input type="radio"  name="Univ" value="Negeri" > Perguruan Tinggi Negeri <br>
-              <input type="radio"  name="Univ" value="Swasta" > Perguruan Tinggi Swasta <br>
-              <input type="radio"  name="Univ" value="Kedinasan" > Perguruan Tinggi Kedinasan <br>
-              <input type="radio"  name="Univ" value="PT" > Perguruan Tinggi : <input type="text" name="Nama_P">
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form method="POST" netlify, action="" enctype = "multipart/form-data">
+          {% csrf_token %}
+          <div class="container">
+              <h1>Filter Pencarian</h1>
+              <p>Atur pencarian sesuai dengan kebutuhanmu.</p>
+              <hr color=yellow>
 
-              <p><strong>Fakultas</strong></p>
-              <input type="radio" name="Fakultas" value="*" checked> Semua Fakultas <br>
-              <input type="radio" name="Fakultas" value="F"> Fakultas : <input type="text" name="Nama_F">
 
-              <p><strong>Jurusan</strong></p>
-              <input type="radio" name = "Jurusan" value="*" checked> Semua Jurusan <br>
-              <input type="radio" name = "Jurusan" value="J"> Jurusan: <input type="text" name="Nama_J">
+            <form method="POST", action="" enctype = "multipart/form-data">
+              <form padding="20px">
+                <p> <strong>Perguruan Tinggi:</strong> </p>
+                <input type="radio"  name="Univ" value="*" checked> Semua Perguruan Tinggi <br>
+                <input type="radio"  name="Univ" value="Negeri" > Perguruan Tinggi Negeri <br>
+                <input type="radio"  name="Univ" value="Swasta" > Perguruan Tinggi Swasta <br>
+                <input type="radio"  name="Univ" value="Kedinasan" > Perguruan Tinggi Kedinasan <br>
+                <input type="radio"  name="Univ" value="PT" > Perguruan Tinggi : <input type="text" name="Nama_P">
 
-              <p> <strong>Tahun Masuk:</strong> </p>
-              <input type="radio" name = "Tahun_M" value="*" checked> Semua Tahun <br>
-              <input type="radio" name = "Tahun_M" value="2019" > 2019 <br>
-              <input type="radio" name = "Tahun_M" value="2018" > 2018 <br>
-              <input type="radio" name = "Tahun_M" value="2017" > 2017 <br>
+                <p><strong>Fakultas</strong></p>
+                <input type="radio" name="Fakultas" value="*" checked> Semua Fakultas <br>
+                <input type="radio" name="Fakultas" value="F"> Fakultas : <input type="text" name="Nama_F">
 
-              <p> <strong>Jalur Masuk:</strong> </p>
-              <input type="radio" name = "Jalur_M" value="*" checked> Semua Jalur <br>
-              <input type="radio" name = "Jalur_M" value="SNMPTN" > SNMPTN <br>
-              <input type="radio" name = "Jalur_M" value="SBMPTN" > SBMPTN<br>
-              <input type="radio" name = "Jalur_M" value="Mandiri" > Mandiri <br>
-              <input type="radio" name = "Jalur_M" value="Lainnya" > Lainnya
+                <p><strong>Jurusan</strong></p>
+                <input type="radio" name = "Jurusan" value="*" checked> Semua Jurusan <br>
+                <input type="radio" name = "Jurusan" value="J"> Jurusan: <input type="text" name="Nama_J">
 
-              <div class="desktop">
-                    <button style="padding : 15px;font-size:20px"><strong>Cari</strong></button>
-              </div>
-              <div class="mobile">
-                    <button style="padding : 10px;font-size:12px"><strong>Cari</strong></button>
-              </div>
+                <p> <strong>Tahun Masuk:</strong> </p>
+                <input type="radio" name = "Tahun_M" value="*" checked> Semua Tahun <br>
+                <input type="radio" name = "Tahun_M" value="2019" > 2019 <br>
+                <input type="radio" name = "Tahun_M" value="2018" > 2018 <br>
+                <input type="radio" name = "Tahun_M" value="2017" > 2017 <br>
 
+                <p> <strong>Jalur Masuk:</strong> </p>
+                <input type="radio" name = "Jalur_M" value="*" checked> Semua Jalur <br>
+                <input type="radio" name = "Jalur_M" value="SNMPTN" > SNMPTN <br>
+                <input type="radio" name = "Jalur_M" value="SBMPTN" > SBMPTN<br>
+                <input type="radio" name = "Jalur_M" value="Mandiri" > Mandiri <br>
+                <input type="radio" name = "Jalur_M" value="Lainnya" > Lainnya <br>
+                <br>
+                <div class="desktop">
+                      <button class="btn btn-warning btn-lg" style="width: 100%;"><strong>Cari</strong></button>
+                </div>
+                <div class="mobile">
+                      <button class="btn btn-warning btn-sm" style="width: 100%;"><strong>Cari</strong></button>
+                </div>
+
+              </form>
             </form>
-          </form>
-        </div>
-      </form>
+          </div>
+        </form>
+    </div>
   </div>
-</div>
-<br>
-<br>
+</section>
 
+<div class="desktop">
+    <section class="portfolio" id="portfolio" style="padding-bottom: 500px;">
+      <div class="container">
+        <div class="row" >
+          {% for i in data %}
+            {% if i.jurusan != "-" and i.status == 'alumni' %}
+            
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6">
+              <a href="/profile/{{i.username}}/" style="color: #0f1c26;">
+              <div class="card">
+                <img src="{{i.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="nama">{{i.nama}}</p>
+                  <p class="jurusanUniv">&#127760; {{i.jurusan}}</p>
+                  <p class="jurusanUniv">&#127891; {{i.univ}}</p>
+                  <hr style="border-top: 1px solid yellow;">
+                  <p class="jalur">{{i.jalur}}</p>
+                </div>
+              </div>
+            </a>
+            </div>
+            {% endif %}
+          {% endfor%}
+        
+      </div>
+    </section>
+  </div>
 
-<div class="cardBlok">
-  {% for i in data %}
-    {% if i.jurusan != "-" and i.status == 'alumni' %}
-      <a href="/profile/{{i.username}}/"><div class="card">
-      <img src="{{i.image.url}}" class="center">
-      <br>
-      <p class="nama">{{i.nama}}</p>
-      <p class="jurusan">&#127760; {{i.jurusan}}</p>
-      <p class="univ">&#127891; {{i.univ}}</p>
-      <br>
-      <hr color=yellow>
-      <p class="jalur">{{i.jalur}}</p>
-      </div></a>
-    {% endif %}
-  {% endfor%}
-</div>
+<div class="mobile">
+    <section class="portfolio" id="portfolio" style="padding-bottom: 500px;">
+      <div class="container">
+        <div class="row">
+          {% for i in data %}
+            {% if i.jurusan != "-" and i.status == 'alumni' %}
+            
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
+              <a href="/profile/{{i.username}}/" style="color: #0f1c26;">
+              <div class="card">
+                <img src="{{i.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="nama">{{i.nama}}</p>
+                  <p class="jurusanUniv">&#127760; {{i.jurusan}}</p>
+                  <p class="jurusanUniv">&#127891; {{i.univ}}</p>
+                  <hr style="border-top: 1px solid yellow;">
+                  <p class="jalur">{{i.jalur}}</p>
+                </div>
+              </div>
+            </a>
+            </div>
+            {% endif %}
+          {% endfor%}
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <script type="text/javascript">
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";}
+    }
+
+  </script>
+    
 </body>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-{% include "footer.html" %}
+  {% include 'footer.html'%}
 </html>
 

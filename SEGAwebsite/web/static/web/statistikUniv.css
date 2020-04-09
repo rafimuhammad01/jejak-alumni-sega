@@ -2,19 +2,19 @@
   box-sizing: border-box;
 }
 
-.spaceBar {
-  padding : 180px 200px 30px 200px;
+.spaceBar { /* Ruang untuk diagram batang */
+  padding : 100px 200px 30px 200px;
   background-color: transparent;
   color: #0f1c26;
 }
 
-.space {
+.space { /* Ruang untuk table dan keterangan diagram batang */
   padding : 30px 200px;
   background-color: transparent;
   color: #0f1c26;
 }
 
-.kotakBar {
+.kotakBar { /* Kotak diagram batang */
   float: center;
   width : 100%;
   padding : 0px;
@@ -22,7 +22,7 @@
   height : 260px;
 }
 
-.kolomTotal {
+.kolomTotal { /* Ruang untuk sebuah diagram batang */
   float: left;
   width: 5%;
   margin: 18px;
@@ -30,12 +30,12 @@
   background-color: #ddd;
 }
 
-.kolomPersen {
+.kolomPersen { /* Bagian sebuah diagram batang yang mencerminkan jumlah persen */
   float: left;
   width: 100%;
 }
 
-.kolomAtas {
+.kolomAtas { /* Bagian sisa dari sebuah diagram batang yang tidak mencerminkan jumlah persen */
   float: center;
   width: 100%;
   background-color: transparent;
@@ -58,7 +58,7 @@
   height: 100%;
 }
 
-.tulisanStat {
+.tulisanStat { /* Bagian keterangan nama jalur dan jumlah persen */
   float: right;
   width: 93%;
   color: #0f1c26;

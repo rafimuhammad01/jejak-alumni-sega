@@ -1,58 +1,57 @@
+<!doctype html>
 {% load static %}
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="{% static 'web/navbar.css' %}">
-</head>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'web/navbar_footer.css' %}">
 
-<body>
+  </head>
+  <body>
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-12">
+          <img src="{% static 'tampilanSega.png' %}">
+          <hr style="border-top: 7px solid #9f1717;">
+        </div>
+      </div>
+    </div>
 
-<div class="kotak">
-	<div class="columnsNavLogo">
-  	<div class="navbar">
-  	   <img class="logo" src="{% static 'tampilanSega.png' %}">
-  	</div>
-	</div>
+    <ul class="nav nav-fill">
+      <li class="nav-item">
+        <a class="nav-link active" href="/"><strong>Beranda</a></strong>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Statistik</strong></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #0f1c26;">
+          <a class="dropdown-item" href="/Statistik/Universitas">&#9971; Perguruan Tinggi</a>
+          <a class="dropdown-item" href="/Statistik/JalurMasuk">&#9997; Jalur Masuk</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Profil Saya</strong></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #0f1c26;">
+          <a class="dropdown-item" href="/profile/{{username}}">&#128587; Lihat/Edit Profil</a>
+          <a class="dropdown-item" href="/logout">&#128590; Logout</a>
+        </div>
+      </li>
+    </ul>
 
-	<div class="colGaris">
-		<hr color=9f1717 size="7">
-	</div>
 
-	<div class="colTulisan">
-  	<div class="columnsNavBeranda">
-    	<div class="navbar">
-    	  <a href="/"><h2 align="right">Beranda</h2></a>
-    	</div>
-  	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 
+  </body>
 
-  	<div class="columnsNav">
-    	<div class="navbar">
-    	  <div class="dropdown">
-    	    <button class="dropbtn"><a href ='#'><h2 align="left">Statistik <i class="fa fa-caret-down"></i></h2></a>
-    	    </button>
-    	    <div class="dropdown-content">
-    	      <a href="/Statistik/Universitas"><h3>&#9971; Perguruan Tinggi</h3></a>
-    	      <a href="/Statistik/JalurMasuk"><h3>&#9997; Jalur Masuk</h3></a>
-    	    </div>
-    	  </div> 
-    	</div>
-  	</div>
-
-  	<div class="columnsNav">
-    	<div class="navbar">
-    	  <div class="dropdown">
-    	    <button class="dropbtn"><a href ='#'><h2 align="right">Profil Saya <i class="fa fa-caret-down"></i></h2></a>
-    	    </button>
-    	    <div class="dropdown-content">
-    	      <a href="/profile/{{username}}"><h3>&#128587; Lihat/Edit Profil</h3></a>
-    	      <a href="/logout"><h3>&#128590; Logout</h3></a>
-    	    </div>
-    	  </div> 
-    	</div>
-  	</div>
-	</div>
-</div>
-
-</body>
 
 </html>
