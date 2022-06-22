@@ -10,7 +10,7 @@ jdcal==1.4.1
 Jinja2==2.11.1
 MarkupPy==1.14
 MarkupSafe==1.1.1
-numpy==1.18.1
+numpy==1.22.0
 odfpy==1.4.1
 openpyxl==3.0.3
 packaging==20.3
